@@ -1,0 +1,14 @@
+name: db_template
+channels:
+- anaconda-fusion
+- defaults
+dependencies:
+- python=3.6.3=h210ce5f_2
+- pymysql=0.7.11=py36hf59f3ba_0
+- pip:
+  - alembic==0.9.6
+  - grachev==0.1.2
+  - requests
+  - proxybroker
+prefix: C:\ProgramData\Miniconda3\envs\db_template
+
