@@ -1,36 +1,46 @@
-import time
-from datetime import datetime
-from itertools import count
+import logging
+from datetime import datetime, date
 from os.path import abspath
 from os.path import dirname
 
-from sqlalchemy import Column, String, Integer, ForeignKey, Sequence, func, Table, DateTime, MetaData, Boolean, Numeric, \
-    Float
-from sqlalchemy.orm import relationship, backref, scoped_session
-from sqlalchemy.ext.declarative import declarative_base
+import time
+from sqlalchemy import Column, String, Integer, DateTime
 from sqlalchemy import create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import scoped_session
 from sqlalchemy.orm import sessionmaker
-import logging
+from sqlalchemy.orm.attributes import get_history
 
 log = logging.getLogger(__name__)
 
 Base = declarative_base()
 
 
+class Airport(Base):
+    __tablename__ = 'airport'
+    code = Column(String(5), primary_key=True)
+    name = Column(String(32))
+
+
 class Ticket(Base):
     __tablename__ = 'ticket'
-    depart_airport_code = Column(String(5), primary_key=True)
-    arrive_airport_code = Column(String(5), primary_key=True)
+    depart_airport_code = Column(String(3), primary_key=True)
+    arrive_airport_code = Column(String(3), primary_key=True)
     depart_date_time = Column(DateTime(), primary_key=True)
-    arrive_date_time = Column(DateTime())
-    depart_airport = Column(String(30))
-    arrive_airport = Column(String(30))
+    arrive_date_time = Column(DateTime(), primary_key=True)
+    airline = Column(String(20), primary_key=True)
+    stop_count = Column(Integer, primary_key=True)
+
+    duration = Column(Integer)
+    price = Column(Integer)
     search_date_time = Column(DateTime())
 
-    airline = Column(String(32))
-    duration = Column(Integer)
-    stop_count = Column(Integer)
-    price = Column(Integer)
+    def __str__(self):
+        return 'Ticket[%s(%s)->%s(%s) %s %s %s]' % (self.depart_airport_code, self.depart_date_time.strftime('%m-%d %H-%M'),
+                                                    self.arrive_airport_code, self.arrive_date_time.strftime('%m-%d %H-%M'),
+                                                    self.duration, self.stop_count, self.price)
+
+    __repr__ = __str__
 
 
 BASE_DIR = abspath(dirname(__file__))
@@ -85,8 +95,7 @@ def task(depart, arrive, date, requests):
         #     f.write(json.dumps(data, indent=2))
         response = requests.post(url, json=data, headers=headers)
         data = response.json()
-        tickets, pending = parse(data, Ticket)
-        if pending:
+        if is_pending(data):
             time.sleep(10)
             for i in range(1, 5):
                 log.info('Processing {} {} {} try {}'.format(depart, arrive, date, i))
@@ -95,12 +104,26 @@ def task(depart, arrive, date, requests):
                                         '&response_include=query%3Bdeeplink%3Bsegment%3Bstats%3Bfqs%3Bpqs%3B_flights_availability&force_fps=aws&_=1529877736386'.format(session_id),
                                         headers={'x-gateway-servedby': response.headers['x-gateway-servedby'],
                                                  'x-skyscanner-channelid': 'website'})
-                tickets, pending = parse(response.json(), Ticket)
-                if not pending:
+                data = response.json()
+                if not is_pending(data):
                     break
-        store(tickets)
+        store(filter_out(parse(data, Ticket)))
     except Exception as ex:
         log.exception('Exception')
+
+
+def filter_out(tickets):
+    prev_len = len(tickets)
+    tickets = list(filter(lambda ticket: ticket.stop_count < 3, tickets))
+    log.info('Filtering out before:{} after:{}'.format(prev_len, len(tickets)))
+    return tickets
+
+
+def is_pending(data):
+    agents_pending = [agent['update_status'] == 'pending' for agent in data["agents"]].count(True)
+    log.info('itineraries:{} legs:{} carriers:{} agents:{}(pending:{}) places:{}'.format(len(data["itineraries"]), len(data["legs"]), len(data["carriers"]),
+                                                                                         len(data["agents"]), agents_pending, len(data["places"])))
+    return agents_pending
 
 
 def store(tickets):
@@ -108,8 +131,11 @@ def store(tickets):
     try:
         log.info('Storing {} tickets'.format(len(tickets)))
         for ticket in tickets:
-            session.merge(ticket)
-        session.commit()
+            changes = changeset(session.merge(ticket))
+            changes.pop("search_date_time", None)
+            if changes:
+                log.info('{} updated {} '.format(ticket, ' '.join(['{}(old:{} new:{})'.format(k, w[0], w[1]) for k, w in changes.items()])))
+            session.commit()
     except Exception:
         log.exception('Exception')
         session.rollback()
@@ -119,60 +145,48 @@ def store(tickets):
 
 def parse(data, ticket_class):
     itineraries = data["itineraries"]
-    legs = data["legs"]
-    carriers = data["carriers"]
-    agents = data["agents"]
-    agents_pending = [agent['update_status'] == 'pending' for agent in agents].count(True)
-    places = data["places"]
-    log.info('itineraries:{} legs:{} carriers:{} agents:{}(pending:{}) places:{}'.format(len(itineraries), len(legs), len(carriers),
-                                                                                         len(agents), agents_pending, len(places)))
+    legs = {leg['id']: leg for leg in data["legs"]}
+    carriers = {carrier['id']: carrier for carrier in data["carriers"]}
+    places = {place['id']: place for place in data["places"]}
     tickets = []
     for itinerary in itineraries:
         ticket = ticket_class()
         tickets.append(ticket)
         ticket.search_date_time = datetime.now()
         ticket.price = int(itinerary['pricing_options'][0]['price']['amount'])
-        firstitem = itinerary['id']
-        # firstitemSeller = itinerary['pricing_options'][0]['agent_ids'][0]
-        # for agent in agents:
-        #     if firstitemSeller == agent["id"]:
-        #         info['seller'] = agent["name"]
+        ticket.id = itinerary['id']
+        leg = legs[ticket.id]
+        ticket.depart_date_time = datetime.strptime(leg['departure'], "%Y-%m-%dT%H:%M:%S")
+        ticket.arrive_date_time = datetime.strptime(leg["arrival"], "%Y-%m-%dT%H:%M:%S")
+        ticket.stop_count = int(leg["stop_count"])
+        ticket.duration = int(leg["duration"])
 
-        for leg in legs:
-            if leg["id"].find(firstitem) > -1:
-                origin_place_id = leg["origin_place_id"]
-                arrival_place_id = leg["destination_place_id"]
-                firstitemCarrier = leg["operating_carrier_ids"][0]
-                ticket.depart_date_time = datetime.strptime(leg['departure'], "%Y-%m-%dT%H:%M:%S")
-                ticket.arrive_date_time = datetime.strptime(leg["arrival"], "%Y-%m-%dT%H:%M:%S")
-                ticket.stop_count = int(leg["stop_count"])
-                ticket.duration = int(leg["duration"])
-                for place in places:
-                    if int(place["id"]) == int(origin_place_id):
-                        ticket.depart_airport_code = place["display_code"]
-                        ticket.depart_airport = place["name"]
-                    if int(place["id"]) == int(arrival_place_id):
-                        ticket.arrive_airport_code = place["display_code"]
-                        ticket.arrive_airport = place["name"]
-                for carrier in carriers:
-                    if int(carrier["id"]) == int(firstitemCarrier):
-                        ticket.airline = carrier["name"]
+        depart_place = places[leg["origin_place_id"]]
+        arrive_place = places[leg["destination_place_id"]]
+        ticket.depart_airport_code = depart_place["display_code"]
+        ticket.arrive_airport_code = arrive_place["display_code"]
 
-    return tickets, agents_pending != 0
+        ticket.airline = ' '.join(carriers[marketing_id]['display_code'] for marketing_id in leg["marketing_carrier_ids"])
+
+    return tickets
+
+
+def changeset(obj):
+    changes = {}
+    for prop in obj.__mapper__.iterate_properties:
+        history = get_history(obj, prop.key)
+        if history.has_changes():
+            old_value = history.deleted[0] if history.deleted else None
+            new_value = history.added[0] if history.added else None
+            if old_value and new_value:
+                changes[prop.key] = (old_value, new_value)
+    return changes
 
 
 if __name__ == '__main__':
+    logging.basicConfig(level=logging.DEBUG)
     Base.metadata.bind = engine
     Base.metadata.create_all()
-    session = Session()
-    try:
-        t = Ticket(depart_date_time=datetime.strptime('2018-06-24T12:59:31', "%Y-%m-%dT%H:%M:%S"),
-                   arrive_date_time=datetime.strptime('2018-06-24T12:59:31', "%Y-%m-%dT%H:%M:%S"), depart_airport_code='LED',
-                   arrive_airport_code='MOW', duration=101, stop_count=1, price=1)
-        session.merge(t)
-        session.commit()
-    except:
-        session.rollback()
-        raise
-    finally:
-        session.close()
+    import requests
+
+    task('AGP', 'AMS', date(2018, 10, 19), requests)
