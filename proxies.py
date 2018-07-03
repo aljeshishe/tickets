@@ -1,3 +1,4 @@
+import sys
 import asyncio
 import time
 import traceback
@@ -5,6 +6,7 @@ from collections import deque
 from queue import Queue
 from threading import Thread
 import logging
+
 
 log = logging.getLogger(__name__)
 
@@ -26,14 +28,19 @@ class Proxies:
         self.loop = loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
         import proxybroker
+        from proxybroker.providers import Tools_rosinstrument_com_socks, Tools_rosinstrument_com
+
+        judges = None  # ['https://proxyjudge.info/', 'http://proxyjudge.info/']
+        providers = None  # ['http://www.proxylists.net/', 'https://www.sslproxies.org/']
 
         async def show(proxies):
             while True:
                 try:
                     proxy = await proxies.get()
                     if proxy is None:
+                        log.info('Proxy search complete found: %s' % self.proxies.qsize())
                         break
-                    log.info('Found proxy: %s' % proxy)
+                    log.info('Found proxy: %s (%s)' % (proxy, self.proxies.qsize()))
                     self.proxies.put(proxy)
                 except:
                     traceback.print_exc()
@@ -42,10 +49,9 @@ class Proxies:
             if self.proxies.qsize() < self.proxy_count_threshold:
                 log.info('Got less that {} proxies, getting more'.format(self.proxy_count_threshold))
                 queue = asyncio.Queue()
-                broker = proxybroker.Broker(queue)
+                broker = proxybroker.Broker(queue, judges=judges, providers=providers)
                 tasks = asyncio.gather(
-                    #broker.find(types=['HTTP'], countries=['US'], limit=self.PROXY_COUNT),
-                    broker.find(types=['SOCKS5'], limit=self.proxy_count),
+                    broker.find(types=['SOCKS5']),
                     show(queue))
 
                 loop.run_until_complete(tasks)
@@ -64,6 +70,8 @@ class Proxies:
 
 
 if __name__ == '__main__':
+    logging.basicConfig(level=logging.DEBUG)
     proxies = Proxies()
     a = proxies.get()
     print(a)
+    time.sleep(1000)
