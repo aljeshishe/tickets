@@ -1,6 +1,9 @@
 import traceback
 from queue import Queue
 from threading import Thread
+import logging
+
+log = logging.getLogger(__name__)
 
 
 class Processor:
@@ -14,6 +17,9 @@ class Processor:
             thread = Thread(target=self._thread_func)
             thread.start()
             self.threads.append(thread)
+
+    def __len__(self):
+        return self.tasks.qsize()
 
     def _thread_func(self):
         while True:
@@ -30,14 +36,21 @@ class Processor:
     def add(self, task):
         self.tasks.put(task)
 
-    def run(self, tasks):
-        for task in tasks:
-            self.add(task)
-        print('%s tasks added' % self.tasks.qsize())
+    def wait_done(self):
         self.tasks.join()
+        print('all done')
+
+    def stop(self):
         for thread in self.threads:
             self.add(self.POISON_PILL)
 
         for thread in self.threads:
             thread.join()
-        print('done')
+        print('stopped')
+
+    def run(self, tasks):
+        for task in tasks:
+            self.add(task)
+        print('%s tasks added' % self.tasks.qsize())
+        self.wait_done()
+        self.stop()
