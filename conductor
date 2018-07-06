@@ -1,0 +1,3690 @@
+{
+  "advs": {
+    "top_widgets": [],
+    "analytics_context": {}
+  },
+  "query": {
+    "market": "RU",
+    "currency": "RUB",
+    "locale": "ru-RU",
+    "adults": 1,
+    "child_ages": [],
+    "cabin_class": "economy",
+    "prefer_directs": false,
+    "legs": [
+      {
+        "origin": 5227,
+        "alternative_origins": [],
+        "destination": 10525,
+        "alternative_destinations": [],
+        "date": "2018-07-30"
+      }
+    ],
+    "children": 0,
+    "infants": 0
+  },
+  "context": {
+    "request_id": "5e0b6c29-940c-42c3-bb4c-132b64d9e38d",
+    "session_id": "ed1758c1-2138-441b-9a35-f521f572f30e"
+  },
+  "itineraries": [
+    {
+      "id": "17538-1807301900--31171,-31669-1-10525-1807311055",
+      "leg_ids": [
+        "17538-1807301900--31171,-31669-1-10525-1807311055"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 15735.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/17538.10525.2018-07-30/air/trava/flights?itinerary=flight|-31171|132|17538|2018-07-30T19:00|13066|2018-07-30T21:00|120;flight|-31669|3793|13066|2018-07-31T09:25|10525|2018-07-31T10:55|150&carriers=-31171,-31669&operators=-31171;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=15735.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_9c6b90fc6b1efd7602982b868fa72235&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "17538-13066-1807301900-1807302100--31171",
+                "13066-10525-1807310925-1807311055--31669"
+              ],
+              "price": {
+                "amount": 15735.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "13066-10525-1807310925-1807311055--31669",
+                  "fare_basis_code": "KLREG",
+                  "booking_code": "K"
+                }
+              ],
+              "opaque_id": "-1036620188"
+            }
+          ]
+        }
+      ],
+      "score": 4.72855
+    },
+    {
+      "id": "11051-1807301500--32478,-31669-2-10525-1807310715",
+      "leg_ids": [
+        "11051-1807301500--32478,-31669-2-10525-1807310715"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 18101.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/11051.10525.2018-07-30/air/trava/flights?itinerary=flight|-32478|2836|11051|2018-07-30T15:00|10141|2018-07-30T17:40|220;flight|-32478|4035|10141|2018-07-30T19:55|15116|2018-07-30T23:35|160;flight|-31669|3141|15116|2018-07-31T06:05|10525|2018-07-31T07:15|130&carriers=-32478,-31669&operators=-32478;-31779;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=18101.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_3257620a80fb5e120628da6588bb794a&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "11051-10141-1807301500-1807301740--32478",
+                "10141-15116-1807301955-1807302335--32478",
+                "15116-10525-1807310605-1807310715--31669"
+              ],
+              "price": {
+                "amount": 18101.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "11051-10141-1807301500-1807301740--32478",
+                  "fare_basis_code": "KRCLOW55",
+                  "booking_code": "K"
+                },
+                {
+                  "segment_id": "10141-15116-1807301955-1807302335--32478",
+                  "fare_basis_code": "KRCLOW55",
+                  "booking_code": "K"
+                },
+                {
+                  "segment_id": "15116-10525-1807310605-1807310715--31669",
+                  "fare_basis_code": "OPREG",
+                  "booking_code": "O"
+                }
+              ],
+              "opaque_id": "319873042"
+            }
+          ]
+        }
+      ],
+      "score": 4.03105
+    },
+    {
+      "id": "11051-1807301610--32090,-31669-2-10525-1807310715",
+      "leg_ids": [
+        "11051-1807301610--32090,-31669-2-10525-1807310715"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 32226.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/11051.10525.2018-07-30/air/trava/flights?itinerary=flight|-32090|2529|11051|2018-07-30T16:10|14385|2018-07-30T18:20|190;flight|-32090|1656|14385|2018-07-30T22:05|15116|2018-07-31T01:00|115;flight|-31669|3141|15116|2018-07-31T06:05|10525|2018-07-31T07:15|130&carriers=-32090,-31669&operators=-32090;-32090;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=32226.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_abe20ee3f86387891df162ac6eaaea4e&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "11051-14385-1807301610-1807301820--32090",
+                "14385-15116-1807302205-1807310100--32090",
+                "15116-10525-1807310605-1807310715--31669"
+              ],
+              "price": {
+                "amount": 32226.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "11051-14385-1807301610-1807301820--32090",
+                  "fare_basis_code": "P11BXXE0",
+                  "booking_code": "P"
+                },
+                {
+                  "segment_id": "14385-15116-1807302205-1807310100--32090",
+                  "fare_basis_code": "P11BXXE0",
+                  "booking_code": "P"
+                },
+                {
+                  "segment_id": "15116-10525-1807310605-1807310715--31669",
+                  "fare_basis_code": "OPREG",
+                  "booking_code": "O"
+                }
+              ],
+              "opaque_id": "588877008"
+            }
+          ]
+        }
+      ],
+      "score": 2.42844
+    },
+    {
+      "id": "11051-1807300950--32649,-31779,-31669-2-10525-1807310715",
+      "leg_ids": [
+        "11051-1807300950--32649,-31779,-31669-2-10525-1807310715"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 16949.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/11051.10525.2018-07-30/air/trava/flights?itinerary=flight|-32649|174|11051|2018-07-30T09:50|13066|2018-07-30T11:40|110;flight|-31779|208|13066|2018-07-30T18:45|15116|2018-07-30T20:00|75;flight|-31669|3141|15116|2018-07-31T06:05|10525|2018-07-31T07:15|130&carriers=-32649,-31779,-31669&operators=-32649;-31779;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=16949.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_0234043e9de7410d6d73cba26c1f1c15&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "11051-13066-1807300950-1807301140--32649",
+                "13066-15116-1807301845-1807302000--31779",
+                "15116-10525-1807310605-1807310715--31669"
+              ],
+              "price": {
+                "amount": 16949.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "11051-13066-1807300950-1807301140--32649",
+                  "fare_basis_code": "NOW",
+                  "booking_code": "N"
+                },
+                {
+                  "segment_id": "13066-15116-1807301845-1807302000--31779",
+                  "fare_basis_code": "EOWMD",
+                  "booking_code": "E"
+                },
+                {
+                  "segment_id": "15116-10525-1807310605-1807310715--31669",
+                  "fare_basis_code": "OPREG",
+                  "booking_code": "O"
+                }
+              ],
+              "opaque_id": "-647349227"
+            }
+          ]
+        }
+      ],
+      "score": 3.3128
+    },
+    {
+      "id": "11051-1807300950--32649,-31779,-31669-2-10525-1807302045",
+      "leg_ids": [
+        "11051-1807300950--32649,-31779,-31669-2-10525-1807302045"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 24051.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/11051.10525.2018-07-30/air/trava/flights?itinerary=flight|-32649|174|11051|2018-07-30T09:50|13066|2018-07-30T11:40|110;flight|-31779|204|13066|2018-07-30T14:20|15116|2018-07-30T15:35|75;flight|-31669|3145|15116|2018-07-30T19:35|10525|2018-07-30T20:45|130&carriers=-32649,-31779,-31669&operators=-32649;-31779;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=24051.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_23ae22cdb56b1169d830fc1c1fa099fe&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "11051-13066-1807300950-1807301140--32649",
+                "13066-15116-1807301420-1807301535--31779",
+                "15116-10525-1807301935-1807302045--31669"
+              ],
+              "price": {
+                "amount": 24051.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "11051-13066-1807300950-1807301140--32649",
+                  "fare_basis_code": "NOW",
+                  "booking_code": "N"
+                },
+                {
+                  "segment_id": "13066-15116-1807301420-1807301535--31779",
+                  "fare_basis_code": "TOWMD",
+                  "booking_code": "T"
+                },
+                {
+                  "segment_id": "15116-10525-1807301935-1807302045--31669",
+                  "fare_basis_code": "OREG",
+                  "booking_code": "O"
+                }
+              ],
+              "opaque_id": "-1915108188"
+            }
+          ]
+        }
+      ],
+      "score": 4.39159
+    },
+    {
+      "id": "17538-1807301000--31669,-31779-2-10525-1807302045",
+      "leg_ids": [
+        "17538-1807301000--31669,-31779-2-10525-1807302045"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 18102.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/17538.10525.2018-07-30/air/trava/flights?itinerary=flight|-31669|2490|17538|2018-07-30T10:00|10202|2018-07-30T11:35|155;flight|-31779|234|10202|2018-07-30T14:15|15116|2018-07-30T16:55|100;flight|-31669|3145|15116|2018-07-30T19:35|10525|2018-07-30T20:45|130&carriers=-31669,-31779&operators=-31669;-31779;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=18102.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_ff6b83d125faf5f10b0c1ca94a56ced5&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "17538-10202-1807301000-1807301135--31669",
+                "10202-15116-1807301415-1807301655--31779",
+                "15116-10525-1807301935-1807302045--31669"
+              ],
+              "price": {
+                "amount": 18102.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "17538-10202-1807301000-1807301135--31669",
+                  "fare_basis_code": "BREG",
+                  "booking_code": "B"
+                },
+                {
+                  "segment_id": "10202-15116-1807301415-1807301655--31779",
+                  "fare_basis_code": "ROW0BAG",
+                  "booking_code": "R"
+                },
+                {
+                  "segment_id": "15116-10525-1807301935-1807302045--31669",
+                  "fare_basis_code": "OREG",
+                  "booking_code": "O"
+                }
+              ],
+              "opaque_id": "-1657582622"
+            }
+          ]
+        }
+      ],
+      "score": 5.9176
+    },
+    {
+      "id": "16626-1807300450--32610,-31669-3-10525-1807302045",
+      "leg_ids": [
+        "16626-1807300450--32610,-31669-3-10525-1807302045"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 17638.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/16626.10525.2018-07-30/air/trava/flights?itinerary=flight|-32610|427|16626|2018-07-30T04:50|15888|2018-07-30T06:35|105;flight|-32610|461|15888|2018-07-30T07:50|17648|2018-07-30T08:15|85;flight|-31669|1583|17648|2018-07-30T12:35|15116|2018-07-30T15:20|105;flight|-31669|3145|15116|2018-07-30T19:35|10525|2018-07-30T20:45|130&carriers=-32610,-31669&operators=-32610;-32610;-31669;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=17638.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_873e709122d998c47886f6bdd1a47ad5&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "16626-15888-1807300450-1807300635--32610",
+                "15888-17648-1807300750-1807300815--32610",
+                "17648-15116-1807301235-1807301520--31669",
+                "15116-10525-1807301935-1807302045--31669"
+              ],
+              "price": {
+                "amount": 17638.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "16626-15888-1807300450-1807300635--32610",
+                  "fare_basis_code": "ZRUOTBA3",
+                  "booking_code": "Z"
+                },
+                {
+                  "segment_id": "15888-17648-1807300750-1807300815--32610",
+                  "fare_basis_code": "ZRUOTBA3",
+                  "booking_code": "Z"
+                },
+                {
+                  "segment_id": "17648-15116-1807301235-1807301520--31669",
+                  "fare_basis_code": "PREG",
+                  "booking_code": "P"
+                },
+                {
+                  "segment_id": "15116-10525-1807301935-1807302045--31669",
+                  "fare_basis_code": "OREG",
+                  "booking_code": "O"
+                }
+              ],
+              "opaque_id": "-853359463"
+            }
+          ]
+        }
+      ],
+      "score": 4.21838
+    },
+    {
+      "id": "11051-1807302300--32649,-31669-1-10525-1807311055",
+      "leg_ids": [
+        "11051-1807302300--32649,-31669-1-10525-1807311055"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 15473.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/11051.10525.2018-07-30/air/trava/flights?itinerary=flight|-32649|176|11051|2018-07-30T23:00|13066|2018-07-31T00:50|110;flight|-31669|3793|13066|2018-07-31T09:25|10525|2018-07-31T10:55|150&carriers=-32649,-31669&operators=-32649;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=15473.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_993d4ba2fcfe1e4ed19e8511c4a0ee60&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "11051-13066-1807302300-1807310050--32649",
+                "13066-10525-1807310925-1807311055--31669"
+              ],
+              "price": {
+                "amount": 15473.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "11051-13066-1807302300-1807310050--32649",
+                  "fare_basis_code": "WOW",
+                  "booking_code": "W"
+                },
+                {
+                  "segment_id": "13066-10525-1807310925-1807311055--31669",
+                  "fare_basis_code": "KLREG",
+                  "booking_code": "K"
+                }
+              ],
+              "opaque_id": "-889208048"
+            }
+          ]
+        }
+      ],
+      "score": 6.29774
+    },
+    {
+      "id": "11051-1807300410--32649,-31669-2-10525-1807310715",
+      "leg_ids": [
+        "11051-1807300410--32649,-31669-2-10525-1807310715"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 13122.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/11051.10525.2018-07-30/air/trava/flights?itinerary=flight|-32649|178|11051|2018-07-30T04:10|13066|2018-07-30T06:00|110;flight|-32649|861|13066|2018-07-30T07:30|15116|2018-07-30T08:10|40;flight|-31669|3141|15116|2018-07-31T06:05|10525|2018-07-31T07:15|130&carriers=-32649,-31669&operators=-32649;-32649;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=13122.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_937efe8a579678f7a6af408f412a2954&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "11051-13066-1807300410-1807300600--32649",
+                "13066-15116-1807300730-1807300810--32649",
+                "15116-10525-1807310605-1807310715--31669"
+              ],
+              "price": {
+                "amount": 13122.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "11051-13066-1807300410-1807300600--32649",
+                  "fare_basis_code": "VVEUOWRO",
+                  "booking_code": "V"
+                },
+                {
+                  "segment_id": "13066-15116-1807300730-1807300810--32649",
+                  "fare_basis_code": "VVEUOWRO",
+                  "booking_code": "V"
+                },
+                {
+                  "segment_id": "15116-10525-1807310605-1807310715--31669",
+                  "fare_basis_code": "OPREG",
+                  "booking_code": "O"
+                }
+              ],
+              "opaque_id": "509068038"
+            }
+          ]
+        }
+      ],
+      "score": 3.41555
+    },
+    {
+      "id": "11051-1807300110--31685,-31915-2-10525-1807302250",
+      "leg_ids": [
+        "11051-1807300110--31685,-31915-2-10525-1807302250"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "vuel",
+            "ryan"
+          ],
+          "price": {
+            "amount": 21050.19,
+            "update_status": "current",
+            "last_updated": "2018-07-06T07:22:25",
+            "quote_age": 322.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "vuel",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/vuel/1/11051.10335.2018-07-30/air/airli/flights?itinerary=flight|-31685|7783|11051|2018-07-30T01:10|9772|2018-07-30T04:40|270;flight|-31685|6164|9772|2018-07-30T11:20|10335|2018-07-30T12:45|85&carriers=-31685&operators=-31685;-31685&passengers=1&channel=website&cabin_class=economy&facilitated=false&ticket_price=15563.39&is_npt=true&is_multipart=true&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&commercial_filters=false&q_datetime_utc=2018-07-06T11:58:44",
+              "segment_ids": [
+                "11051-9772-1807300110-1807300440--31685",
+                "9772-10335-1807301120-1807301245--31685"
+              ],
+              "price": {
+                "amount": 15563.39,
+                "update_status": "current",
+                "last_updated": "2018-07-06T11:58:44",
+                "quote_age": 45.0
+              },
+              "is_npt": true,
+              "transfer_protection": "self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "11051-9772-1807300110-1807300440--31685",
+                  "fare_basis_code": "PB01",
+                  "booking_code": "O",
+                  "fare_family": "Basic"
+                },
+                {
+                  "segment_id": "9772-10335-1807301120-1807301245--31685",
+                  "fare_basis_code": "PB01",
+                  "booking_code": "V",
+                  "fare_family": "Basic"
+                }
+              ],
+              "opaque_id": "-374617190"
+            },
+            {
+              "agent_id": "ryan",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/ryan/1/10335.10525.2018-07-30/air/airli/flights?itinerary=flight|-31915|4801|10335|2018-07-30T21:40|10525|2018-07-30T22:50|70&carriers=-31915&operators=-31915&passengers=1&channel=website&cabin_class=economy&facilitated=false&ticket_price=5486.80&is_npt=true&is_multipart=true&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&commercial_filters=false&q_datetime_utc=2018-07-06T07:22:25",
+              "segment_ids": [
+                "10335-10525-1807302140-1807302250--31915"
+              ],
+              "price": {
+                "amount": 5486.8,
+                "update_status": "current",
+                "last_updated": "2018-07-06T07:22:25",
+                "quote_age": 322.0
+              },
+              "is_npt": true,
+              "transfer_protection": "self-transfer",
+              "max_redirect_age": 10,
+              "fares": [],
+              "opaque_id": "20187525"
+            }
+          ]
+        }
+      ],
+      "score": 2.63795
+    },
+    {
+      "id": "16626-1807301040--32093,-31669-2-10525-1807302045",
+      "leg_ids": [
+        "16626-1807301040--32093,-31669-2-10525-1807302045"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 20612.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/16626.10525.2018-07-30/air/trava/flights?itinerary=flight|-32093|5678|16626|2018-07-30T10:40|17648|2018-07-30T11:45|125;flight|-32093|645|17648|2018-07-30T14:30|15116|2018-07-30T17:20|110;flight|-31669|3145|15116|2018-07-30T19:35|10525|2018-07-30T20:45|130&carriers=-32093,-31669&operators=-32741;-32093;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=20612.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_2b3f4182da757b4fe85877f8b7be0bed&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "16626-17648-1807301040-1807301145--32093",
+                "17648-15116-1807301430-1807301720--32093",
+                "15116-10525-1807301935-1807302045--31669"
+              ],
+              "price": {
+                "amount": 20612.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "16626-17648-1807301040-1807301145--32093",
+                  "fare_basis_code": "V1STD3",
+                  "booking_code": "V"
+                },
+                {
+                  "segment_id": "17648-15116-1807301430-1807301720--32093",
+                  "fare_basis_code": "V1STD3",
+                  "booking_code": "V"
+                },
+                {
+                  "segment_id": "15116-10525-1807301935-1807302045--31669",
+                  "fare_basis_code": "OREG",
+                  "booking_code": "O"
+                }
+              ],
+              "opaque_id": "1024355490"
+            }
+          ]
+        }
+      ],
+      "score": 5.50959
+    },
+    {
+      "id": "16626-1807302115--32741,-31734,-31779,-31669-3-10525-1807311500",
+      "leg_ids": [
+        "16626-1807302115--32741,-31734,-31779,-31669-3-10525-1807311500"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 32497.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/16626.10525.2018-07-30/air/trava/flights?itinerary=flight|-32741|2134|16626|2018-07-30T21:15|12585|2018-07-31T00:50|215;flight|-31734|1043|12585|2018-07-31T07:10|15116|2018-07-31T08:30|80;flight|-31779|605|15116|2018-07-31T10:55|17139|2018-07-31T12:15|80;flight|-31669|3547|17139|2018-07-31T14:20|10525|2018-07-31T15:00|100&carriers=-32741,-31734,-31779,-31669&operators=-32741;-31734;-31779;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=32497.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_a2182cea204364f685afdd475c20e8c4&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "16626-12585-1807302115-1807310050--32741",
+                "12585-15116-1807310710-1807310830--31734",
+                "15116-17139-1807311055-1807311215--31779",
+                "17139-10525-1807311420-1807311500--31669"
+              ],
+              "price": {
+                "amount": 32497.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "16626-12585-1807302115-1807310050--32741",
+                  "fare_basis_code": "NVO",
+                  "booking_code": "N"
+                },
+                {
+                  "segment_id": "12585-15116-1807310710-1807310830--31734",
+                  "fare_basis_code": "PT2PC1M",
+                  "booking_code": "P"
+                },
+                {
+                  "segment_id": "15116-17139-1807311055-1807311215--31779",
+                  "fare_basis_code": "SOWSKY",
+                  "booking_code": "S"
+                },
+                {
+                  "segment_id": "17139-10525-1807311420-1807311500--31669",
+                  "fare_basis_code": "IJREG",
+                  "booking_code": "I"
+                }
+              ],
+              "opaque_id": "-1355603306"
+            }
+          ]
+        }
+      ],
+      "score": 2.06569
+    },
+    {
+      "id": "11051-1807300410--32649,-31779,-31669-3-10525-1807301600",
+      "leg_ids": [
+        "11051-1807300410--32649,-31779,-31669-3-10525-1807301600"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 18968.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/11051.10525.2018-07-30/air/trava/flights?itinerary=flight|-32649|178|11051|2018-07-30T04:10|13066|2018-07-30T06:00|110;flight|-32649|861|13066|2018-07-30T07:30|15116|2018-07-30T08:10|40;flight|-31779|653|15116|2018-07-30T11:40|10592|2018-07-30T12:50|70;flight|-31669|3385|10592|2018-07-30T15:00|10525|2018-07-30T16:00|120&carriers=-32649,-31779,-31669&operators=-32649;-32649;-31779;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=18968.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_ad5fe81accf237bd1e3632d7162eecda&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "11051-13066-1807300410-1807300600--32649",
+                "13066-15116-1807300730-1807300810--32649",
+                "15116-10592-1807301140-1807301250--31779",
+                "10592-10525-1807301500-1807301600--31669"
+              ],
+              "price": {
+                "amount": 18968.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "11051-13066-1807300410-1807300600--32649",
+                  "fare_basis_code": "VVEUOWRO",
+                  "booking_code": "V"
+                },
+                {
+                  "segment_id": "13066-15116-1807300730-1807300810--32649",
+                  "fare_basis_code": "VVEUOWRO",
+                  "booking_code": "V"
+                },
+                {
+                  "segment_id": "15116-10592-1807301140-1807301250--31779",
+                  "fare_basis_code": "SOWSKY",
+                  "booking_code": "S"
+                },
+                {
+                  "segment_id": "10592-10525-1807301500-1807301600--31669",
+                  "fare_basis_code": "LBREG",
+                  "booking_code": "L"
+                }
+              ],
+              "opaque_id": "-301869452"
+            }
+          ]
+        }
+      ],
+      "score": 5.17069
+    },
+    {
+      "id": "17538-1807302155--31669,-32090-3-10525-1807311500",
+      "leg_ids": [
+        "17538-1807302155--31669,-32090-3-10525-1807311500"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 32894.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/17538.10525.2018-07-30/air/trava/flights?itinerary=flight|-31669|2492|17538|2018-07-30T21:55|10202|2018-07-30T23:30|155;flight|-32090|1343|10202|2018-07-31T06:10|11616|2018-07-31T07:55|105;flight|-32090|1470|11616|2018-07-31T09:10|17139|2018-07-31T12:00|110;flight|-31669|3547|17139|2018-07-31T14:20|10525|2018-07-31T15:00|100&carriers=-31669,-32090&operators=-31669;-32090;-32089;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=32894.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_47326c0ce59ab4c563578c3076dd5624&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "17538-10202-1807302155-1807302330--31669",
+                "10202-11616-1807310610-1807310755--32090",
+                "11616-17139-1807310910-1807311200--32090",
+                "17139-10525-1807311420-1807311500--31669"
+              ],
+              "price": {
+                "amount": 32894.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "17538-10202-1807302155-1807302330--31669",
+                  "fare_basis_code": "OREG",
+                  "booking_code": "O"
+                },
+                {
+                  "segment_id": "10202-11616-1807310610-1807310755--32090",
+                  "fare_basis_code": "S13LGTE2",
+                  "booking_code": "S"
+                },
+                {
+                  "segment_id": "11616-17139-1807310910-1807311200--32090",
+                  "fare_basis_code": "S13LGTE2",
+                  "booking_code": "S"
+                },
+                {
+                  "segment_id": "17139-10525-1807311420-1807311500--31669",
+                  "fare_basis_code": "IJREG",
+                  "booking_code": "I"
+                }
+              ],
+              "opaque_id": "-1887494323"
+            }
+          ]
+        }
+      ],
+      "score": 2.11599
+    },
+    {
+      "id": "11051-1807300035--31913,-31734,-31669-3-10525-1807301420",
+      "leg_ids": [
+        "11051-1807300035--31913,-31734,-31669-3-10525-1807301420"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 158669.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/11051.10525.2018-07-30/air/trava/flights?itinerary=flight|-31913|1159|11051|2018-07-30T00:35|15970|2018-07-30T02:30|115;flight|-31734|294|15970|2018-07-30T04:10|12585|2018-07-30T06:35|145;flight|-31734|1003|12585|2018-07-30T07:50|16346|2018-07-30T08:25|95;flight|-31669|7757|16346|2018-07-30T12:35|10525|2018-07-30T14:20|105&carriers=-31913,-31734,-31669&operators=-31913;-31734;-31734;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=158669.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_b17b6dbad7457a8141af24145fc18201&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "11051-15970-1807300035-1807300230--31913",
+                "15970-12585-1807300410-1807300635--31734",
+                "12585-16346-1807300750-1807300825--31734",
+                "16346-10525-1807301235-1807301420--31669"
+              ],
+              "price": {
+                "amount": 158669.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "11051-15970-1807300035-1807300230--31913",
+                  "fare_basis_code": "QFLOW",
+                  "booking_code": "Q"
+                },
+                {
+                  "segment_id": "15970-12585-1807300410-1807300635--31734",
+                  "fare_basis_code": "CIF",
+                  "booking_code": "J"
+                },
+                {
+                  "segment_id": "12585-16346-1807300750-1807300825--31734",
+                  "fare_basis_code": "CIF",
+                  "booking_code": "T"
+                },
+                {
+                  "segment_id": "16346-10525-1807301235-1807301420--31669",
+                  "fare_basis_code": "SREG",
+                  "booking_code": "S"
+                }
+              ],
+              "opaque_id": "-820748848"
+            }
+          ]
+        }
+      ],
+      "score": 0.53781
+    },
+    {
+      "id": "17538-1807302040--31734,-31669-2-10525-1807310715",
+      "leg_ids": [
+        "17538-1807302040--31734,-31669-2-10525-1807310715"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 12841.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/17538.10525.2018-07-30/air/trava/flights?itinerary=flight|-31734|416|17538|2018-07-30T20:40|12585|2018-07-30T23:45|185;flight|-31734|1041|12585|2018-07-31T01:15|15116|2018-07-31T02:25|70;flight|-31669|3141|15116|2018-07-31T06:05|10525|2018-07-31T07:15|130&carriers=-31734,-31669&operators=-31734;-31734;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=12841.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_413f1b9a80d15305b97194581e426440&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "17538-12585-1807302040-1807302345--31734",
+                "12585-15116-1807310115-1807310225--31734",
+                "15116-10525-1807310605-1807310715--31669"
+              ],
+              "price": {
+                "amount": 12841.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "17538-12585-1807302040-1807302345--31734",
+                  "fare_basis_code": "WN3XPCOW",
+                  "booking_code": "W"
+                },
+                {
+                  "segment_id": "12585-15116-1807310115-1807310225--31734",
+                  "fare_basis_code": "WN3XPCOW",
+                  "booking_code": "W"
+                },
+                {
+                  "segment_id": "15116-10525-1807310605-1807310715--31669",
+                  "fare_basis_code": "OPREG",
+                  "booking_code": "O"
+                }
+              ],
+              "opaque_id": "178595557"
+            }
+          ]
+        }
+      ],
+      "score": 8.46208
+    },
+    {
+      "id": "16626-1807300920--31779,-31669-1-10525-1807302045",
+      "leg_ids": [
+        "16626-1807300920--31779,-31669-1-10525-1807302045"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 18625.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/16626.10525.2018-07-30/air/trava/flights?itinerary=flight|-31779|9202|16626|2018-07-30T09:20|15116|2018-07-30T12:30|190;flight|-31669|3145|15116|2018-07-30T19:35|10525|2018-07-30T20:45|130&carriers=-31779,-31669&operators=-32741;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=18625.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_034aee4942021a800e818d04c9df81c1&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "16626-15116-1807300920-1807301230--31779",
+                "15116-10525-1807301935-1807302045--31669"
+              ],
+              "price": {
+                "amount": 18625.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "16626-15116-1807300920-1807301230--31779",
+                  "fare_basis_code": "HOWRU",
+                  "booking_code": "H"
+                },
+                {
+                  "segment_id": "15116-10525-1807301935-1807302045--31669",
+                  "fare_basis_code": "OREG",
+                  "booking_code": "O"
+                }
+              ],
+              "opaque_id": "366174673"
+            }
+          ]
+        }
+      ],
+      "score": 5.44262
+    },
+    {
+      "id": "17538-1807300020--31717,-31734,-31669-3-10525-1807301420",
+      "leg_ids": [
+        "17538-1807300020--31717,-31734,-31669-3-10525-1807301420"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 30677.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/17538.10525.2018-07-30/air/trava/flights?itinerary=flight|-31717|535|17538|2018-07-30T00:20|13242|2018-07-30T02:25|125;flight|-31734|486|13242|2018-07-30T04:30|12585|2018-07-30T06:35|125;flight|-31734|1003|12585|2018-07-30T07:50|16346|2018-07-30T08:25|95;flight|-31669|7757|16346|2018-07-30T12:35|10525|2018-07-30T14:20|105&carriers=-31717,-31734,-31669&operators=-31717;-31734;-31734;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=30677.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_e6c4e4f456d5c2b5095674385a8e1a4a&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "17538-13242-1807300020-1807300225--31717",
+                "13242-12585-1807300430-1807300635--31734",
+                "12585-16346-1807300750-1807300825--31734",
+                "16346-10525-1807301235-1807301420--31669"
+              ],
+              "price": {
+                "amount": 30677.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "17538-13242-1807300020-1807300225--31717",
+                  "fare_basis_code": "OLTOW",
+                  "booking_code": "O"
+                },
+                {
+                  "segment_id": "13242-12585-1807300430-1807300635--31734",
+                  "fare_basis_code": "QN2PXOW",
+                  "booking_code": "Q"
+                },
+                {
+                  "segment_id": "12585-16346-1807300750-1807300825--31734",
+                  "fare_basis_code": "QN2PXOW",
+                  "booking_code": "Q"
+                },
+                {
+                  "segment_id": "16346-10525-1807301235-1807301420--31669",
+                  "fare_basis_code": "SREG",
+                  "booking_code": "S"
+                }
+              ],
+              "opaque_id": "-2038977846"
+            }
+          ]
+        }
+      ],
+      "score": 2.7353
+    },
+    {
+      "id": "11051-1807300800--32093,-31669-2-10525-1807302045",
+      "leg_ids": [
+        "11051-1807300800--32093,-31669-2-10525-1807302045"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 17117.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/11051.10525.2018-07-30/air/trava/flights?itinerary=flight|-32093|680|11051|2018-07-30T08:00|17648|2018-07-30T09:20|140;flight|-32093|641|17648|2018-07-30T11:20|15116|2018-07-30T14:10|110;flight|-31669|3145|15116|2018-07-30T19:35|10525|2018-07-30T20:45|130&carriers=-32093,-31669&operators=-32093;-32093;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=17117.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_4edac3e3ce48b4fa11fa69fb6aec60ca&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "11051-17648-1807300800-1807300920--32093",
+                "17648-15116-1807301120-1807301410--32093",
+                "15116-10525-1807301935-1807302045--31669"
+              ],
+              "price": {
+                "amount": 17117.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "11051-17648-1807300800-1807300920--32093",
+                  "fare_basis_code": "W1SAV7",
+                  "booking_code": "W"
+                },
+                {
+                  "segment_id": "17648-15116-1807301120-1807301410--32093",
+                  "fare_basis_code": "W1SAV7",
+                  "booking_code": "W"
+                },
+                {
+                  "segment_id": "15116-10525-1807301935-1807302045--31669",
+                  "fare_basis_code": "OREG",
+                  "booking_code": "O"
+                }
+              ],
+              "opaque_id": "1905356646"
+            }
+          ]
+        }
+      ],
+      "score": 5.34785
+    },
+    {
+      "id": "16626-1807302035--31779,-31669-1-10525-1807310715",
+      "leg_ids": [
+        "16626-1807302035--31779,-31669-1-10525-1807310715"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 12492.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/16626.10525.2018-07-30/air/trava/flights?itinerary=flight|-31779|9204|16626|2018-07-30T20:35|15116|2018-07-30T23:45|190;flight|-31669|3141|15116|2018-07-31T06:05|10525|2018-07-31T07:15|130&carriers=-31779,-31669&operators=-32741;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=12492.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_322dcf327c21283ad5cafbdf1782653f&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "16626-15116-1807302035-1807302345--31779",
+                "15116-10525-1807310605-1807310715--31669"
+              ],
+              "price": {
+                "amount": 12492.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "16626-15116-1807302035-1807302345--31779",
+                  "fare_basis_code": "VOWRU",
+                  "booking_code": "V"
+                },
+                {
+                  "segment_id": "15116-10525-1807310605-1807310715--31669",
+                  "fare_basis_code": "OPREG",
+                  "booking_code": "O"
+                }
+              ],
+              "opaque_id": "-655121960"
+            }
+          ]
+        }
+      ],
+      "score": 8.63636
+    },
+    {
+      "id": "11051-1807300410--32649,-31669-2-10525-1807302045",
+      "leg_ids": [
+        "11051-1807300410--32649,-31669-2-10525-1807302045"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 13310.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/11051.10525.2018-07-30/air/trava/flights?itinerary=flight|-32649|178|11051|2018-07-30T04:10|13066|2018-07-30T06:00|110;flight|-32649|861|13066|2018-07-30T07:30|15116|2018-07-30T08:10|40;flight|-31669|3145|15116|2018-07-30T19:35|10525|2018-07-30T20:45|130&carriers=-32649,-31669&operators=-32649;-32649;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=13310.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_376ff9183fc5da35c24037484a9fec41&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "11051-13066-1807300410-1807300600--32649",
+                "13066-15116-1807300730-1807300810--32649",
+                "15116-10525-1807301935-1807302045--31669"
+              ],
+              "price": {
+                "amount": 13310.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "11051-13066-1807300410-1807300600--32649",
+                  "fare_basis_code": "VVEUOWRO",
+                  "booking_code": "V"
+                },
+                {
+                  "segment_id": "13066-15116-1807300730-1807300810--32649",
+                  "fare_basis_code": "VVEUOWRO",
+                  "booking_code": "V"
+                },
+                {
+                  "segment_id": "15116-10525-1807301935-1807302045--31669",
+                  "fare_basis_code": "OREG",
+                  "booking_code": "O"
+                }
+              ],
+              "opaque_id": "-274298949"
+            }
+          ]
+        }
+      ],
+      "score": 5.37812
+    },
+    {
+      "id": "11051-1807301630--32649,-31734,-31669-3-10525-1807310715",
+      "leg_ids": [
+        "11051-1807301630--32649,-31734,-31669-3-10525-1807310715"
+      ],
+      "pricing_options": [
+        {
+          "agent_ids": [
+            "skyp"
+          ],
+          "price": {
+            "amount": 30358.0,
+            "update_status": "current",
+            "last_updated": "2018-07-06T12:43:57",
+            "quote_age": 0.0
+          },
+          "unpriced_type": "",
+          "items": [
+            {
+              "agent_id": "skyp",
+              "url": "/transport_deeplink/4.0/RU/ru-RU/RUB/skyp/1/11051.10525.2018-07-30/air/trava/flights?itinerary=flight|-32649|172|11051|2018-07-30T16:30|13066|2018-07-30T18:20|110;flight|-31734|272|13066|2018-07-30T21:35|12585|2018-07-30T23:15|100;flight|-31734|1041|12585|2018-07-31T01:15|15116|2018-07-31T02:25|70;flight|-31669|3141|15116|2018-07-31T06:05|10525|2018-07-31T07:15|130&carriers=-32649,-31734,-31669&operators=-32649;-31734;-31734;-31669&passengers=1&channel=website&cabin_class=economy&facilitated=true&ticket_price=30358.00&is_npt=false&is_multipart=false&client_id=skyscanner_website&request_id=5e0b6c29-940c-42c3-bb4c-132b64d9e38d&deeplink_ids=eu-west-1.prod_f2ad40b8b9450b51c20ceee771a06962&commercial_filters=false&q_datetime_utc=2018-07-06T12:43:57&transfer_protection=protected",
+              "segment_ids": [
+                "11051-13066-1807301630-1807301820--32649",
+                "13066-12585-1807302135-1807302315--31734",
+                "12585-15116-1807310115-1807310225--31734",
+                "15116-10525-1807310605-1807310715--31669"
+              ],
+              "price": {
+                "amount": 30358.0,
+                "update_status": "current",
+                "last_updated": "2018-07-06T12:43:57",
+                "quote_age": 0.0
+              },
+              "is_facilitated": true,
+              "transfer_protection": "protected-self-transfer",
+              "max_redirect_age": 10,
+              "fares": [
+                {
+                  "segment_id": "11051-13066-1807301630-1807301820--32649",
+                  "fare_basis_code": "NOW",
+                  "booking_code": "N"
+                },
+                {
+                  "segment_id": "13066-12585-1807302135-1807302315--31734",
+                  "fare_basis_code": "TY2XP6M",
+                  "booking_code": "T"
+                },
+                {
+                  "segment_id": "12585-15116-1807310115-1807310225--31734",
+                  "fare_basis_code": "TT1XP3M",
+                  "booking_code": "T"
+                },
+                {
+                  "segment_id": "15116-10525-1807310605-1807310715--31669",
+                  "fare_basis_code": "OPREG",
+                  "booking_code": "O"
+                }
+              ],
+              "opaque_id": "676993618"
+            }
+          ]
+        }
+      ],
+      "score": 2.63242
+    }
+  ],
+  "legs": [
+    {
+      "id": "17538-1807301900--31171,-31669-1-10525-1807311055",
+      "origin_place_id": 17538,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T19:00:00",
+      "arrival": "2018-07-31T10:55:00",
+      "segment_ids": [
+        "17538-13066-1807301900-1807302100--31171",
+        "13066-10525-1807310925-1807311055--31669"
+      ],
+      "duration": 1015,
+      "stop_count": 1,
+      "marketing_carrier_ids": [
+        -31171,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -31171,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          13066
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "11051-1807301500--32478,-31669-2-10525-1807310715",
+      "origin_place_id": 11051,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T15:00:00",
+      "arrival": "2018-07-31T07:15:00",
+      "segment_ids": [
+        "11051-10141-1807301500-1807301740--32478",
+        "10141-15116-1807301955-1807302335--32478",
+        "15116-10525-1807310605-1807310715--31669"
+      ],
+      "duration": 1035,
+      "stop_count": 2,
+      "marketing_carrier_ids": [
+        -32478,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -32478,
+        -31779,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          10141
+        ],
+        [
+          15116
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "11051-1807301610--32090,-31669-2-10525-1807310715",
+      "origin_place_id": 11051,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T16:10:00",
+      "arrival": "2018-07-31T07:15:00",
+      "segment_ids": [
+        "11051-14385-1807301610-1807301820--32090",
+        "14385-15116-1807302205-1807310100--32090",
+        "15116-10525-1807310605-1807310715--31669"
+      ],
+      "duration": 965,
+      "stop_count": 2,
+      "marketing_carrier_ids": [
+        -32090,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -32090,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          14385
+        ],
+        [
+          15116
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "11051-1807300950--32649,-31779,-31669-2-10525-1807310715",
+      "origin_place_id": 11051,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T09:50:00",
+      "arrival": "2018-07-31T07:15:00",
+      "segment_ids": [
+        "11051-13066-1807300950-1807301140--32649",
+        "13066-15116-1807301845-1807302000--31779",
+        "15116-10525-1807310605-1807310715--31669"
+      ],
+      "duration": 1345,
+      "stop_count": 2,
+      "marketing_carrier_ids": [
+        -32649,
+        -31779,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -32649,
+        -31779,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          13066
+        ],
+        [
+          15116
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "11051-1807300950--32649,-31779,-31669-2-10525-1807302045",
+      "origin_place_id": 11051,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T09:50:00",
+      "arrival": "2018-07-30T20:45:00",
+      "segment_ids": [
+        "11051-13066-1807300950-1807301140--32649",
+        "13066-15116-1807301420-1807301535--31779",
+        "15116-10525-1807301935-1807302045--31669"
+      ],
+      "duration": 715,
+      "stop_count": 2,
+      "marketing_carrier_ids": [
+        -32649,
+        -31779,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -32649,
+        -31779,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          13066
+        ],
+        [
+          15116
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "17538-1807301000--31669,-31779-2-10525-1807302045",
+      "origin_place_id": 17538,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T10:00:00",
+      "arrival": "2018-07-30T20:45:00",
+      "segment_ids": [
+        "17538-10202-1807301000-1807301135--31669",
+        "10202-15116-1807301415-1807301655--31779",
+        "15116-10525-1807301935-1807302045--31669"
+      ],
+      "duration": 705,
+      "stop_count": 2,
+      "marketing_carrier_ids": [
+        -31669,
+        -31779
+      ],
+      "operating_carrier_ids": [
+        -31669,
+        -31779
+      ],
+      "stop_ids": [
+        [
+          10202
+        ],
+        [
+          15116
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "16626-1807300450--32610,-31669-3-10525-1807302045",
+      "origin_place_id": 16626,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T04:50:00",
+      "arrival": "2018-07-30T20:45:00",
+      "segment_ids": [
+        "16626-15888-1807300450-1807300635--32610",
+        "15888-17648-1807300750-1807300815--32610",
+        "17648-15116-1807301235-1807301520--31669",
+        "15116-10525-1807301935-1807302045--31669"
+      ],
+      "duration": 1015,
+      "stop_count": 3,
+      "marketing_carrier_ids": [
+        -32610,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -32610,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          15888
+        ],
+        [
+          17648
+        ],
+        [
+          15116
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "11051-1807302300--32649,-31669-1-10525-1807311055",
+      "origin_place_id": 11051,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T23:00:00",
+      "arrival": "2018-07-31T10:55:00",
+      "segment_ids": [
+        "11051-13066-1807302300-1807310050--32649",
+        "13066-10525-1807310925-1807311055--31669"
+      ],
+      "duration": 775,
+      "stop_count": 1,
+      "marketing_carrier_ids": [
+        -32649,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -32649,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          13066
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "11051-1807300410--32649,-31669-2-10525-1807310715",
+      "origin_place_id": 11051,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T04:10:00",
+      "arrival": "2018-07-31T07:15:00",
+      "segment_ids": [
+        "11051-13066-1807300410-1807300600--32649",
+        "13066-15116-1807300730-1807300810--32649",
+        "15116-10525-1807310605-1807310715--31669"
+      ],
+      "duration": 1685,
+      "stop_count": 2,
+      "marketing_carrier_ids": [
+        -32649,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -32649,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          13066
+        ],
+        [
+          15116
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "11051-1807300110--31685,-31915-2-10525-1807302250",
+      "origin_place_id": 11051,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T01:10:00",
+      "arrival": "2018-07-30T22:50:00",
+      "segment_ids": [
+        "11051-9772-1807300110-1807300440--31685",
+        "9772-10335-1807301120-1807301245--31685",
+        "10335-10525-1807302140-1807302250--31915"
+      ],
+      "duration": 1360,
+      "stop_count": 2,
+      "marketing_carrier_ids": [
+        -31685,
+        -31915
+      ],
+      "operating_carrier_ids": [
+        -31685,
+        -31915
+      ],
+      "stop_ids": [
+        [
+          9772
+        ],
+        [
+          10335
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "16626-1807301040--32093,-31669-2-10525-1807302045",
+      "origin_place_id": 16626,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T10:40:00",
+      "arrival": "2018-07-30T20:45:00",
+      "segment_ids": [
+        "16626-17648-1807301040-1807301145--32093",
+        "17648-15116-1807301430-1807301720--32093",
+        "15116-10525-1807301935-1807302045--31669"
+      ],
+      "duration": 665,
+      "stop_count": 2,
+      "marketing_carrier_ids": [
+        -32093,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -32741,
+        -32093,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          17648
+        ],
+        [
+          15116
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "16626-1807302115--32741,-31734,-31779,-31669-3-10525-1807311500",
+      "origin_place_id": 16626,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T21:15:00",
+      "arrival": "2018-07-31T15:00:00",
+      "segment_ids": [
+        "16626-12585-1807302115-1807310050--32741",
+        "12585-15116-1807310710-1807310830--31734",
+        "15116-17139-1807311055-1807311215--31779",
+        "17139-10525-1807311420-1807311500--31669"
+      ],
+      "duration": 1125,
+      "stop_count": 3,
+      "marketing_carrier_ids": [
+        -32741,
+        -31734,
+        -31779,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -32741,
+        -31734,
+        -31779,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          12585
+        ],
+        [
+          15116
+        ],
+        [
+          17139
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "11051-1807300410--32649,-31779,-31669-3-10525-1807301600",
+      "origin_place_id": 11051,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T04:10:00",
+      "arrival": "2018-07-30T16:00:00",
+      "segment_ids": [
+        "11051-13066-1807300410-1807300600--32649",
+        "13066-15116-1807300730-1807300810--32649",
+        "15116-10592-1807301140-1807301250--31779",
+        "10592-10525-1807301500-1807301600--31669"
+      ],
+      "duration": 770,
+      "stop_count": 3,
+      "marketing_carrier_ids": [
+        -32649,
+        -31779,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -32649,
+        -31779,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          13066
+        ],
+        [
+          15116
+        ],
+        [
+          10592
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "17538-1807302155--31669,-32090-3-10525-1807311500",
+      "origin_place_id": 17538,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T21:55:00",
+      "arrival": "2018-07-31T15:00:00",
+      "segment_ids": [
+        "17538-10202-1807302155-1807302330--31669",
+        "10202-11616-1807310610-1807310755--32090",
+        "11616-17139-1807310910-1807311200--32090",
+        "17139-10525-1807311420-1807311500--31669"
+      ],
+      "duration": 1085,
+      "stop_count": 3,
+      "marketing_carrier_ids": [
+        -31669,
+        -32090
+      ],
+      "operating_carrier_ids": [
+        -31669,
+        -32090,
+        -32089
+      ],
+      "stop_ids": [
+        [
+          10202
+        ],
+        [
+          11616
+        ],
+        [
+          17139
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "11051-1807300035--31913,-31734,-31669-3-10525-1807301420",
+      "origin_place_id": 11051,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T00:35:00",
+      "arrival": "2018-07-30T14:20:00",
+      "segment_ids": [
+        "11051-15970-1807300035-1807300230--31913",
+        "15970-12585-1807300410-1807300635--31734",
+        "12585-16346-1807300750-1807300825--31734",
+        "16346-10525-1807301235-1807301420--31669"
+      ],
+      "duration": 885,
+      "stop_count": 3,
+      "marketing_carrier_ids": [
+        -31913,
+        -31734,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -31913,
+        -31734,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          15970
+        ],
+        [
+          12585
+        ],
+        [
+          16346
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "17538-1807302040--31734,-31669-2-10525-1807310715",
+      "origin_place_id": 17538,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T20:40:00",
+      "arrival": "2018-07-31T07:15:00",
+      "segment_ids": [
+        "17538-12585-1807302040-1807302345--31734",
+        "12585-15116-1807310115-1807310225--31734",
+        "15116-10525-1807310605-1807310715--31669"
+      ],
+      "duration": 695,
+      "stop_count": 2,
+      "marketing_carrier_ids": [
+        -31734,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -31734,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          12585
+        ],
+        [
+          15116
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "16626-1807300920--31779,-31669-1-10525-1807302045",
+      "origin_place_id": 16626,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T09:20:00",
+      "arrival": "2018-07-30T20:45:00",
+      "segment_ids": [
+        "16626-15116-1807300920-1807301230--31779",
+        "15116-10525-1807301935-1807302045--31669"
+      ],
+      "duration": 745,
+      "stop_count": 1,
+      "marketing_carrier_ids": [
+        -31779,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -32741,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          15116
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "17538-1807300020--31717,-31734,-31669-3-10525-1807301420",
+      "origin_place_id": 17538,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T00:20:00",
+      "arrival": "2018-07-30T14:20:00",
+      "segment_ids": [
+        "17538-13242-1807300020-1807300225--31717",
+        "13242-12585-1807300430-1807300635--31734",
+        "12585-16346-1807300750-1807300825--31734",
+        "16346-10525-1807301235-1807301420--31669"
+      ],
+      "duration": 900,
+      "stop_count": 3,
+      "marketing_carrier_ids": [
+        -31717,
+        -31734,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -31717,
+        -31734,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          13242
+        ],
+        [
+          12585
+        ],
+        [
+          16346
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "11051-1807300800--32093,-31669-2-10525-1807302045",
+      "origin_place_id": 11051,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T08:00:00",
+      "arrival": "2018-07-30T20:45:00",
+      "segment_ids": [
+        "11051-17648-1807300800-1807300920--32093",
+        "17648-15116-1807301120-1807301410--32093",
+        "15116-10525-1807301935-1807302045--31669"
+      ],
+      "duration": 825,
+      "stop_count": 2,
+      "marketing_carrier_ids": [
+        -32093,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -32093,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          17648
+        ],
+        [
+          15116
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "16626-1807302035--31779,-31669-1-10525-1807310715",
+      "origin_place_id": 16626,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T20:35:00",
+      "arrival": "2018-07-31T07:15:00",
+      "segment_ids": [
+        "16626-15116-1807302035-1807302345--31779",
+        "15116-10525-1807310605-1807310715--31669"
+      ],
+      "duration": 700,
+      "stop_count": 1,
+      "marketing_carrier_ids": [
+        -31779,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -32741,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          15116
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "11051-1807300410--32649,-31669-2-10525-1807302045",
+      "origin_place_id": 11051,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T04:10:00",
+      "arrival": "2018-07-30T20:45:00",
+      "segment_ids": [
+        "11051-13066-1807300410-1807300600--32649",
+        "13066-15116-1807300730-1807300810--32649",
+        "15116-10525-1807301935-1807302045--31669"
+      ],
+      "duration": 1055,
+      "stop_count": 2,
+      "marketing_carrier_ids": [
+        -32649,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -32649,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          13066
+        ],
+        [
+          15116
+        ]
+      ],
+      "self_transfer": true
+    },
+    {
+      "id": "11051-1807301630--32649,-31734,-31669-3-10525-1807310715",
+      "origin_place_id": 11051,
+      "destination_place_id": 10525,
+      "departure": "2018-07-30T16:30:00",
+      "arrival": "2018-07-31T07:15:00",
+      "segment_ids": [
+        "11051-13066-1807301630-1807301820--32649",
+        "13066-12585-1807302135-1807302315--31734",
+        "12585-15116-1807310115-1807310225--31734",
+        "15116-10525-1807310605-1807310715--31669"
+      ],
+      "duration": 945,
+      "stop_count": 3,
+      "marketing_carrier_ids": [
+        -32649,
+        -31734,
+        -31669
+      ],
+      "operating_carrier_ids": [
+        -32649,
+        -31734,
+        -31669
+      ],
+      "stop_ids": [
+        [
+          13066
+        ],
+        [
+          12585
+        ],
+        [
+          15116
+        ]
+      ],
+      "self_transfer": true
+    }
+  ],
+  "segments": [
+    {
+      "id": "17538-13066-1807301900-1807302100--31171",
+      "origin_place_id": 17538,
+      "destination_place_id": 13066,
+      "arrival": "2018-07-30T21:00:00",
+      "departure": "2018-07-30T19:00:00",
+      "duration": 120,
+      "marketing_flight_number": "132",
+      "marketing_carrier_id": -31171,
+      "operating_carrier_id": -31171,
+      "mode": "flight"
+    },
+    {
+      "id": "13066-10525-1807310925-1807311055--31669",
+      "origin_place_id": 13066,
+      "destination_place_id": 10525,
+      "arrival": "2018-07-31T10:55:00",
+      "departure": "2018-07-31T09:25:00",
+      "duration": 150,
+      "marketing_flight_number": "3793",
+      "marketing_carrier_id": -31669,
+      "operating_carrier_id": -31669,
+      "mode": "flight"
+    },
+    {
+      "id": "11051-10141-1807301500-1807301740--32478",
+      "origin_place_id": 11051,
+      "destination_place_id": 10141,
+      "arrival": "2018-07-30T17:40:00",
+      "departure": "2018-07-30T15:00:00",
+      "duration": 220,
+      "marketing_flight_number": "2836",
+      "marketing_carrier_id": -32478,
+      "operating_carrier_id": -32478,
+      "mode": "flight"
+    },
+    {
+      "id": "10141-15116-1807301955-1807302335--32478",
+      "origin_place_id": 10141,
+      "destination_place_id": 15116,
+      "arrival": "2018-07-30T23:35:00",
+      "departure": "2018-07-30T19:55:00",
+      "duration": 160,
+      "marketing_flight_number": "4035",
+      "marketing_carrier_id": -32478,
+      "operating_carrier_id": -31779,
+      "mode": "flight"
+    },
+    {
+      "id": "15116-10525-1807310605-1807310715--31669",
+      "origin_place_id": 15116,
+      "destination_place_id": 10525,
+      "arrival": "2018-07-31T07:15:00",
+      "departure": "2018-07-31T06:05:00",
+      "duration": 130,
+      "marketing_flight_number": "3141",
+      "marketing_carrier_id": -31669,
+      "operating_carrier_id": -31669,
+      "mode": "flight"
+    },
+    {
+      "id": "11051-14385-1807301610-1807301820--32090",
+      "origin_place_id": 11051,
+      "destination_place_id": 14385,
+      "arrival": "2018-07-30T18:20:00",
+      "departure": "2018-07-30T16:10:00",
+      "duration": 190,
+      "marketing_flight_number": "2529",
+      "marketing_carrier_id": -32090,
+      "operating_carrier_id": -32090,
+      "mode": "flight"
+    },
+    {
+      "id": "14385-15116-1807302205-1807310100--32090",
+      "origin_place_id": 14385,
+      "destination_place_id": 15116,
+      "arrival": "2018-07-31T01:00:00",
+      "departure": "2018-07-30T22:05:00",
+      "duration": 115,
+      "marketing_flight_number": "1656",
+      "marketing_carrier_id": -32090,
+      "operating_carrier_id": -32090,
+      "mode": "flight"
+    },
+    {
+      "id": "11051-13066-1807300950-1807301140--32649",
+      "origin_place_id": 11051,
+      "destination_place_id": 13066,
+      "arrival": "2018-07-30T11:40:00",
+      "departure": "2018-07-30T09:50:00",
+      "duration": 110,
+      "marketing_flight_number": "174",
+      "marketing_carrier_id": -32649,
+      "operating_carrier_id": -32649,
+      "mode": "flight"
+    },
+    {
+      "id": "13066-15116-1807301845-1807302000--31779",
+      "origin_place_id": 13066,
+      "destination_place_id": 15116,
+      "arrival": "2018-07-30T20:00:00",
+      "departure": "2018-07-30T18:45:00",
+      "duration": 75,
+      "marketing_flight_number": "208",
+      "marketing_carrier_id": -31779,
+      "operating_carrier_id": -31779,
+      "mode": "flight"
+    },
+    {
+      "id": "13066-15116-1807301420-1807301535--31779",
+      "origin_place_id": 13066,
+      "destination_place_id": 15116,
+      "arrival": "2018-07-30T15:35:00",
+      "departure": "2018-07-30T14:20:00",
+      "duration": 75,
+      "marketing_flight_number": "204",
+      "marketing_carrier_id": -31779,
+      "operating_carrier_id": -31779,
+      "mode": "flight"
+    },
+    {
+      "id": "15116-10525-1807301935-1807302045--31669",
+      "origin_place_id": 15116,
+      "destination_place_id": 10525,
+      "arrival": "2018-07-30T20:45:00",
+      "departure": "2018-07-30T19:35:00",
+      "duration": 130,
+      "marketing_flight_number": "3145",
+      "marketing_carrier_id": -31669,
+      "operating_carrier_id": -31669,
+      "mode": "flight"
+    },
+    {
+      "id": "17538-10202-1807301000-1807301135--31669",
+      "origin_place_id": 17538,
+      "destination_place_id": 10202,
+      "arrival": "2018-07-30T11:35:00",
+      "departure": "2018-07-30T10:00:00",
+      "duration": 155,
+      "marketing_flight_number": "2490",
+      "marketing_carrier_id": -31669,
+      "operating_carrier_id": -31669,
+      "mode": "flight"
+    },
+    {
+      "id": "10202-15116-1807301415-1807301655--31779",
+      "origin_place_id": 10202,
+      "destination_place_id": 15116,
+      "arrival": "2018-07-30T16:55:00",
+      "departure": "2018-07-30T14:15:00",
+      "duration": 100,
+      "marketing_flight_number": "234",
+      "marketing_carrier_id": -31779,
+      "operating_carrier_id": -31779,
+      "mode": "flight"
+    },
+    {
+      "id": "16626-15888-1807300450-1807300635--32610",
+      "origin_place_id": 16626,
+      "destination_place_id": 15888,
+      "arrival": "2018-07-30T06:35:00",
+      "departure": "2018-07-30T04:50:00",
+      "duration": 105,
+      "marketing_flight_number": "427",
+      "marketing_carrier_id": -32610,
+      "operating_carrier_id": -32610,
+      "mode": "flight"
+    },
+    {
+      "id": "15888-17648-1807300750-1807300815--32610",
+      "origin_place_id": 15888,
+      "destination_place_id": 17648,
+      "arrival": "2018-07-30T08:15:00",
+      "departure": "2018-07-30T07:50:00",
+      "duration": 85,
+      "marketing_flight_number": "461",
+      "marketing_carrier_id": -32610,
+      "operating_carrier_id": -32610,
+      "mode": "flight"
+    },
+    {
+      "id": "17648-15116-1807301235-1807301520--31669",
+      "origin_place_id": 17648,
+      "destination_place_id": 15116,
+      "arrival": "2018-07-30T15:20:00",
+      "departure": "2018-07-30T12:35:00",
+      "duration": 105,
+      "marketing_flight_number": "1583",
+      "marketing_carrier_id": -31669,
+      "operating_carrier_id": -31669,
+      "mode": "flight"
+    },
+    {
+      "id": "11051-13066-1807302300-1807310050--32649",
+      "origin_place_id": 11051,
+      "destination_place_id": 13066,
+      "arrival": "2018-07-31T00:50:00",
+      "departure": "2018-07-30T23:00:00",
+      "duration": 110,
+      "marketing_flight_number": "176",
+      "marketing_carrier_id": -32649,
+      "operating_carrier_id": -32649,
+      "mode": "flight"
+    },
+    {
+      "id": "11051-13066-1807300410-1807300600--32649",
+      "origin_place_id": 11051,
+      "destination_place_id": 13066,
+      "arrival": "2018-07-30T06:00:00",
+      "departure": "2018-07-30T04:10:00",
+      "duration": 110,
+      "marketing_flight_number": "178",
+      "marketing_carrier_id": -32649,
+      "operating_carrier_id": -32649,
+      "mode": "flight"
+    },
+    {
+      "id": "13066-15116-1807300730-1807300810--32649",
+      "origin_place_id": 13066,
+      "destination_place_id": 15116,
+      "arrival": "2018-07-30T08:10:00",
+      "departure": "2018-07-30T07:30:00",
+      "duration": 40,
+      "marketing_flight_number": "861",
+      "marketing_carrier_id": -32649,
+      "operating_carrier_id": -32649,
+      "mode": "flight"
+    },
+    {
+      "id": "11051-9772-1807300110-1807300440--31685",
+      "origin_place_id": 11051,
+      "destination_place_id": 9772,
+      "arrival": "2018-07-30T04:40:00",
+      "departure": "2018-07-30T01:10:00",
+      "duration": 270,
+      "marketing_flight_number": "7783",
+      "marketing_carrier_id": -31685,
+      "operating_carrier_id": -31685,
+      "mode": "flight"
+    },
+    {
+      "id": "9772-10335-1807301120-1807301245--31685",
+      "origin_place_id": 9772,
+      "destination_place_id": 10335,
+      "arrival": "2018-07-30T12:45:00",
+      "departure": "2018-07-30T11:20:00",
+      "duration": 85,
+      "marketing_flight_number": "6164",
+      "marketing_carrier_id": -31685,
+      "operating_carrier_id": -31685,
+      "mode": "flight"
+    },
+    {
+      "id": "10335-10525-1807302140-1807302250--31915",
+      "origin_place_id": 10335,
+      "destination_place_id": 10525,
+      "arrival": "2018-07-30T22:50:00",
+      "departure": "2018-07-30T21:40:00",
+      "duration": 70,
+      "marketing_flight_number": "4801",
+      "marketing_carrier_id": -31915,
+      "operating_carrier_id": -31915,
+      "mode": "flight"
+    },
+    {
+      "id": "16626-17648-1807301040-1807301145--32093",
+      "origin_place_id": 16626,
+      "destination_place_id": 17648,
+      "arrival": "2018-07-30T11:45:00",
+      "departure": "2018-07-30T10:40:00",
+      "duration": 125,
+      "marketing_flight_number": "5678",
+      "marketing_carrier_id": -32093,
+      "operating_carrier_id": -32741,
+      "mode": "flight"
+    },
+    {
+      "id": "17648-15116-1807301430-1807301720--32093",
+      "origin_place_id": 17648,
+      "destination_place_id": 15116,
+      "arrival": "2018-07-30T17:20:00",
+      "departure": "2018-07-30T14:30:00",
+      "duration": 110,
+      "marketing_flight_number": "645",
+      "marketing_carrier_id": -32093,
+      "operating_carrier_id": -32093,
+      "mode": "flight"
+    },
+    {
+      "id": "16626-12585-1807302115-1807310050--32741",
+      "origin_place_id": 16626,
+      "destination_place_id": 12585,
+      "arrival": "2018-07-31T00:50:00",
+      "departure": "2018-07-30T21:15:00",
+      "duration": 215,
+      "marketing_flight_number": "2134",
+      "marketing_carrier_id": -32741,
+      "operating_carrier_id": -32741,
+      "mode": "flight"
+    },
+    {
+      "id": "12585-15116-1807310710-1807310830--31734",
+      "origin_place_id": 12585,
+      "destination_place_id": 15116,
+      "arrival": "2018-07-31T08:30:00",
+      "departure": "2018-07-31T07:10:00",
+      "duration": 80,
+      "marketing_flight_number": "1043",
+      "marketing_carrier_id": -31734,
+      "operating_carrier_id": -31734,
+      "mode": "flight"
+    },
+    {
+      "id": "15116-17139-1807311055-1807311215--31779",
+      "origin_place_id": 15116,
+      "destination_place_id": 17139,
+      "arrival": "2018-07-31T12:15:00",
+      "departure": "2018-07-31T10:55:00",
+      "duration": 80,
+      "marketing_flight_number": "605",
+      "marketing_carrier_id": -31779,
+      "operating_carrier_id": -31779,
+      "mode": "flight"
+    },
+    {
+      "id": "17139-10525-1807311420-1807311500--31669",
+      "origin_place_id": 17139,
+      "destination_place_id": 10525,
+      "arrival": "2018-07-31T15:00:00",
+      "departure": "2018-07-31T14:20:00",
+      "duration": 100,
+      "marketing_flight_number": "3547",
+      "marketing_carrier_id": -31669,
+      "operating_carrier_id": -31669,
+      "mode": "flight"
+    },
+    {
+      "id": "15116-10592-1807301140-1807301250--31779",
+      "origin_place_id": 15116,
+      "destination_place_id": 10592,
+      "arrival": "2018-07-30T12:50:00",
+      "departure": "2018-07-30T11:40:00",
+      "duration": 70,
+      "marketing_flight_number": "653",
+      "marketing_carrier_id": -31779,
+      "operating_carrier_id": -31779,
+      "mode": "flight"
+    },
+    {
+      "id": "10592-10525-1807301500-1807301600--31669",
+      "origin_place_id": 10592,
+      "destination_place_id": 10525,
+      "arrival": "2018-07-30T16:00:00",
+      "departure": "2018-07-30T15:00:00",
+      "duration": 120,
+      "marketing_flight_number": "3385",
+      "marketing_carrier_id": -31669,
+      "operating_carrier_id": -31669,
+      "mode": "flight"
+    },
+    {
+      "id": "17538-10202-1807302155-1807302330--31669",
+      "origin_place_id": 17538,
+      "destination_place_id": 10202,
+      "arrival": "2018-07-30T23:30:00",
+      "departure": "2018-07-30T21:55:00",
+      "duration": 155,
+      "marketing_flight_number": "2492",
+      "marketing_carrier_id": -31669,
+      "operating_carrier_id": -31669,
+      "mode": "flight"
+    },
+    {
+      "id": "10202-11616-1807310610-1807310755--32090",
+      "origin_place_id": 10202,
+      "destination_place_id": 11616,
+      "arrival": "2018-07-31T07:55:00",
+      "departure": "2018-07-31T06:10:00",
+      "duration": 105,
+      "marketing_flight_number": "1343",
+      "marketing_carrier_id": -32090,
+      "operating_carrier_id": -32090,
+      "mode": "flight"
+    },
+    {
+      "id": "11616-17139-1807310910-1807311200--32090",
+      "origin_place_id": 11616,
+      "destination_place_id": 17139,
+      "arrival": "2018-07-31T12:00:00",
+      "departure": "2018-07-31T09:10:00",
+      "duration": 110,
+      "marketing_flight_number": "1470",
+      "marketing_carrier_id": -32090,
+      "operating_carrier_id": -32089,
+      "mode": "flight"
+    },
+    {
+      "id": "11051-15970-1807300035-1807300230--31913",
+      "origin_place_id": 11051,
+      "destination_place_id": 15970,
+      "arrival": "2018-07-30T02:30:00",
+      "departure": "2018-07-30T00:35:00",
+      "duration": 115,
+      "marketing_flight_number": "1159",
+      "marketing_carrier_id": -31913,
+      "operating_carrier_id": -31913,
+      "mode": "flight"
+    },
+    {
+      "id": "15970-12585-1807300410-1807300635--31734",
+      "origin_place_id": 15970,
+      "destination_place_id": 12585,
+      "arrival": "2018-07-30T06:35:00",
+      "departure": "2018-07-30T04:10:00",
+      "duration": 145,
+      "marketing_flight_number": "294",
+      "marketing_carrier_id": -31734,
+      "operating_carrier_id": -31734,
+      "mode": "flight"
+    },
+    {
+      "id": "12585-16346-1807300750-1807300825--31734",
+      "origin_place_id": 12585,
+      "destination_place_id": 16346,
+      "arrival": "2018-07-30T08:25:00",
+      "departure": "2018-07-30T07:50:00",
+      "duration": 95,
+      "marketing_flight_number": "1003",
+      "marketing_carrier_id": -31734,
+      "operating_carrier_id": -31734,
+      "mode": "flight"
+    },
+    {
+      "id": "16346-10525-1807301235-1807301420--31669",
+      "origin_place_id": 16346,
+      "destination_place_id": 10525,
+      "arrival": "2018-07-30T14:20:00",
+      "departure": "2018-07-30T12:35:00",
+      "duration": 105,
+      "marketing_flight_number": "7757",
+      "marketing_carrier_id": -31669,
+      "operating_carrier_id": -31669,
+      "mode": "flight"
+    },
+    {
+      "id": "17538-12585-1807302040-1807302345--31734",
+      "origin_place_id": 17538,
+      "destination_place_id": 12585,
+      "arrival": "2018-07-30T23:45:00",
+      "departure": "2018-07-30T20:40:00",
+      "duration": 185,
+      "marketing_flight_number": "416",
+      "marketing_carrier_id": -31734,
+      "operating_carrier_id": -31734,
+      "mode": "flight"
+    },
+    {
+      "id": "12585-15116-1807310115-1807310225--31734",
+      "origin_place_id": 12585,
+      "destination_place_id": 15116,
+      "arrival": "2018-07-31T02:25:00",
+      "departure": "2018-07-31T01:15:00",
+      "duration": 70,
+      "marketing_flight_number": "1041",
+      "marketing_carrier_id": -31734,
+      "operating_carrier_id": -31734,
+      "mode": "flight"
+    },
+    {
+      "id": "16626-15116-1807300920-1807301230--31779",
+      "origin_place_id": 16626,
+      "destination_place_id": 15116,
+      "arrival": "2018-07-30T12:30:00",
+      "departure": "2018-07-30T09:20:00",
+      "duration": 190,
+      "marketing_flight_number": "9202",
+      "marketing_carrier_id": -31779,
+      "operating_carrier_id": -32741,
+      "mode": "flight"
+    },
+    {
+      "id": "17538-13242-1807300020-1807300225--31717",
+      "origin_place_id": 17538,
+      "destination_place_id": 13242,
+      "arrival": "2018-07-30T02:25:00",
+      "departure": "2018-07-30T00:20:00",
+      "duration": 125,
+      "marketing_flight_number": "535",
+      "marketing_carrier_id": -31717,
+      "operating_carrier_id": -31717,
+      "mode": "flight"
+    },
+    {
+      "id": "13242-12585-1807300430-1807300635--31734",
+      "origin_place_id": 13242,
+      "destination_place_id": 12585,
+      "arrival": "2018-07-30T06:35:00",
+      "departure": "2018-07-30T04:30:00",
+      "duration": 125,
+      "marketing_flight_number": "486",
+      "marketing_carrier_id": -31734,
+      "operating_carrier_id": -31734,
+      "mode": "flight"
+    },
+    {
+      "id": "11051-17648-1807300800-1807300920--32093",
+      "origin_place_id": 11051,
+      "destination_place_id": 17648,
+      "arrival": "2018-07-30T09:20:00",
+      "departure": "2018-07-30T08:00:00",
+      "duration": 140,
+      "marketing_flight_number": "680",
+      "marketing_carrier_id": -32093,
+      "operating_carrier_id": -32093,
+      "mode": "flight"
+    },
+    {
+      "id": "17648-15116-1807301120-1807301410--32093",
+      "origin_place_id": 17648,
+      "destination_place_id": 15116,
+      "arrival": "2018-07-30T14:10:00",
+      "departure": "2018-07-30T11:20:00",
+      "duration": 110,
+      "marketing_flight_number": "641",
+      "marketing_carrier_id": -32093,
+      "operating_carrier_id": -32093,
+      "mode": "flight"
+    },
+    {
+      "id": "16626-15116-1807302035-1807302345--31779",
+      "origin_place_id": 16626,
+      "destination_place_id": 15116,
+      "arrival": "2018-07-30T23:45:00",
+      "departure": "2018-07-30T20:35:00",
+      "duration": 190,
+      "marketing_flight_number": "9204",
+      "marketing_carrier_id": -31779,
+      "operating_carrier_id": -32741,
+      "mode": "flight"
+    },
+    {
+      "id": "11051-13066-1807301630-1807301820--32649",
+      "origin_place_id": 11051,
+      "destination_place_id": 13066,
+      "arrival": "2018-07-30T18:20:00",
+      "departure": "2018-07-30T16:30:00",
+      "duration": 110,
+      "marketing_flight_number": "172",
+      "marketing_carrier_id": -32649,
+      "operating_carrier_id": -32649,
+      "mode": "flight"
+    },
+    {
+      "id": "13066-12585-1807302135-1807302315--31734",
+      "origin_place_id": 13066,
+      "destination_place_id": 12585,
+      "arrival": "2018-07-30T23:15:00",
+      "departure": "2018-07-30T21:35:00",
+      "duration": 100,
+      "marketing_flight_number": "272",
+      "marketing_carrier_id": -31734,
+      "operating_carrier_id": -31734,
+      "mode": "flight"
+    }
+  ],
+  "places": [
+    {
+      "id": 17538,
+      "alt_id": "VKO",
+      "parent_id": 5227,
+      "name": "\u041c\u043e\u0441\u043a\u0432\u0430 \u0412\u043d\u0443\u043a\u043e\u0432\u043e",
+      "type": "Airport",
+      "display_code": "VKO"
+    },
+    {
+      "id": 6793,
+      "alt_id": "ROSV",
+      "parent_id": 191,
+      "name": "\u0420\u043e\u0441\u0442\u043e\u0432-\u043d\u0430-\u0414\u043e\u043d\u0443",
+      "type": "City",
+      "display_code": "ROV"
+    },
+    {
+      "id": 13066,
+      "alt_id": "KIV",
+      "parent_id": 4133,
+      "name": "\u041a\u0438\u0448\u0438\u043d\u0451\u0432",
+      "type": "Airport",
+      "display_code": "KIV"
+    },
+    {
+      "id": 15116,
+      "alt_id": "OTP",
+      "parent_id": 1234,
+      "name": "\u0411\u0443\u0445\u0430\u0440\u0435\u0441\u0442 \u041e\u0442\u043e\u043f\u0435\u043d\u0438",
+      "type": "Airport",
+      "display_code": "OTP"
+    },
+    {
+      "id": 7693,
+      "alt_id": "TIMI",
+      "parent_id": 204,
+      "name": "\u0422\u0438\u043c\u0438\u0448\u043e\u0430\u0440\u0430",
+      "type": "City",
+      "display_code": "TSR"
+    },
+    {
+      "id": 782,
+      "alt_id": "BARC",
+      "parent_id": 200,
+      "name": "\u0411\u0430\u0440\u0441\u0435\u043b\u043e\u043d\u0430",
+      "type": "City",
+      "display_code": "BCN"
+    },
+    {
+      "id": 15888,
+      "alt_id": "RIX",
+      "parent_id": 6713,
+      "name": "\u0420\u0438\u0433\u0430",
+      "type": "Airport",
+      "display_code": "RIX"
+    },
+    {
+      "id": 8336,
+      "alt_id": "WARS",
+      "parent_id": 194,
+      "name": "\u0412\u0430\u0440\u0448\u0430\u0432\u0430",
+      "type": "City",
+      "display_code": "WAW"
+    },
+    {
+      "id": 151,
+      "alt_id": "MK",
+      "parent_id": 4,
+      "name": "\u041c\u0430\u043a\u0435\u0434\u043e\u043d\u0438\u044f",
+      "type": "Country",
+      "display_code": "MK"
+    },
+    {
+      "id": 1178,
+      "alt_id": "BRUS",
+      "parent_id": 240,
+      "name": "\u0411\u0440\u044e\u0441\u0441\u0435\u043b\u044c",
+      "type": "City",
+      "display_code": "BRU"
+    },
+    {
+      "id": 29,
+      "alt_id": "TR",
+      "parent_id": 7,
+      "name": "\u0422\u0443\u0440\u0446\u0438\u044f",
+      "type": "Country",
+      "display_code": "TR"
+    },
+    {
+      "id": 10525,
+      "alt_id": "CIA",
+      "parent_id": 6781,
+      "name": "\u0420\u0438\u043c \u0427\u0430\u043c\u043f\u0438\u043d\u043e",
+      "type": "Airport",
+      "display_code": "CIA"
+    },
+    {
+      "id": 10141,
+      "alt_id": "BRU",
+      "parent_id": 1178,
+      "name": "\u0411\u0440\u044e\u0441\u0441\u0435\u043b\u044c \u0418\u043d\u0442\u0435\u0440\u043d\u044d\u0448\u043d\u043b",
+      "type": "Airport",
+      "display_code": "BRU"
+    },
+    {
+      "id": 1699,
+      "alt_id": "CLUJ",
+      "parent_id": 204,
+      "name": "\u041a\u043b\u0443\u0436-\u041d\u0430\u043f\u043e\u043a\u0430",
+      "type": "City",
+      "display_code": "CLJ"
+    },
+    {
+      "id": 4133,
+      "alt_id": "KIVA",
+      "parent_id": 229,
+      "name": "\u041a\u0438\u0448\u0438\u043d\u0451\u0432",
+      "type": "City",
+      "display_code": "KIV"
+    },
+    {
+      "id": 12585,
+      "alt_id": "IST",
+      "parent_id": 3637,
+      "name": "\u0421\u0442\u0430\u043c\u0431\u0443\u043b \u0410\u0442\u0430\u0442\u044e\u0440\u043a",
+      "type": "Airport",
+      "display_code": "IST"
+    },
+    {
+      "id": 11051,
+      "alt_id": "DME",
+      "parent_id": 5227,
+      "name": "\u041c\u043e\u0441\u043a\u0432\u0430 \u0414\u043e\u043c\u043e\u0434\u0435\u0434\u043e\u0432\u043e",
+      "type": "Airport",
+      "display_code": "DME"
+    },
+    {
+      "id": 9772,
+      "alt_id": "BCN",
+      "parent_id": 782,
+      "name": "\u0411\u0430\u0440\u0441\u0435\u043b\u043e\u043d\u0430",
+      "type": "Airport",
+      "display_code": "BCN"
+    },
+    {
+      "id": 14385,
+      "alt_id": "MUC",
+      "parent_id": 5363,
+      "name": "\u041c\u044e\u043d\u0445\u0435\u043d",
+      "type": "Airport",
+      "display_code": "MUC"
+    },
+    {
+      "id": 3637,
+      "alt_id": "ISTA",
+      "parent_id": 29,
+      "name": "\u0421\u0442\u0430\u043c\u0431\u0443\u043b",
+      "type": "City",
+      "display_code": "IST"
+    },
+    {
+      "id": 6713,
+      "alt_id": "RIGA",
+      "parent_id": 238,
+      "name": "\u0420\u0438\u0433\u0430",
+      "type": "City",
+      "display_code": "RIX"
+    },
+    {
+      "id": 13242,
+      "alt_id": "KRR",
+      "parent_id": 4285,
+      "name": "\u041a\u0440\u0430\u0441\u043d\u043e\u0434\u0430\u0440",
+      "type": "Airport",
+      "display_code": "KRR"
+    },
+    {
+      "id": 4285,
+      "alt_id": "KRAT",
+      "parent_id": 191,
+      "name": "\u041a\u0440\u0430\u0441\u043d\u043e\u0434\u0430\u0440",
+      "type": "City",
+      "display_code": "KRR"
+    },
+    {
+      "id": 191,
+      "alt_id": "RU",
+      "parent_id": 4,
+      "name": "\u0420\u043e\u0441\u0441\u0438\u044f",
+      "type": "Country",
+      "display_code": "RU"
+    },
+    {
+      "id": 194,
+      "alt_id": "PL",
+      "parent_id": 4,
+      "name": "\u041f\u043e\u043b\u044c\u0448\u0430",
+      "type": "Country",
+      "display_code": "PL"
+    },
+    {
+      "id": 200,
+      "alt_id": "ES",
+      "parent_id": 4,
+      "name": "\u0418\u0441\u043f\u0430\u043d\u0438\u044f",
+      "type": "Country",
+      "display_code": "ES"
+    },
+    {
+      "id": 204,
+      "alt_id": "RO",
+      "parent_id": 4,
+      "name": "\u0420\u0443\u043c\u044b\u043d\u0438\u044f",
+      "type": "Country",
+      "display_code": "RO"
+    },
+    {
+      "id": 1357,
+      "alt_id": "CAGL",
+      "parent_id": 226,
+      "name": "\u041a\u0430\u043b\u044c\u044f\u0440\u0438",
+      "type": "City",
+      "display_code": "CAG"
+    },
+    {
+      "id": 1234,
+      "alt_id": "BUCH",
+      "parent_id": 204,
+      "name": "\u0411\u0443\u0445\u0430\u0440\u0435\u0441\u0442",
+      "type": "City",
+      "display_code": "BUH"
+    },
+    {
+      "id": 1235,
+      "alt_id": "BUDA",
+      "parent_id": 228,
+      "name": "\u0411\u0443\u0434\u0430\u043f\u0435\u0448\u0442",
+      "type": "City",
+      "display_code": "BUD"
+    },
+    {
+      "id": 10202,
+      "alt_id": "BUD",
+      "parent_id": 1235,
+      "name": "\u0411\u0443\u0434\u0430\u043f\u0435\u0448\u0442",
+      "type": "Airport",
+      "display_code": "BUD"
+    },
+    {
+      "id": 16346,
+      "alt_id": "SKP",
+      "parent_id": 7152,
+      "name": "\u0421\u043a\u043e\u043f\u044c\u0435",
+      "type": "Airport",
+      "display_code": "SKP"
+    },
+    {
+      "id": 10335,
+      "alt_id": "CAG",
+      "parent_id": 1357,
+      "name": "\u041a\u0430\u043b\u044c\u044f\u0440\u0438",
+      "type": "Airport",
+      "display_code": "CAG"
+    },
+    {
+      "id": 11616,
+      "alt_id": "FRA",
+      "parent_id": 2687,
+      "name": "\u0424\u0440\u0430\u043d\u043a\u0444\u0443\u0440\u0442-\u043d\u0430-\u041c\u0430\u0439\u043d\u0435",
+      "type": "Airport",
+      "display_code": "FRA"
+    },
+    {
+      "id": 10592,
+      "alt_id": "CLJ",
+      "parent_id": 1699,
+      "name": "\u041a\u043b\u0443\u0436-\u041d\u0430\u043f\u043e\u043a\u0430",
+      "type": "Airport",
+      "display_code": "CLJ"
+    },
+    {
+      "id": 15970,
+      "alt_id": "ROV",
+      "parent_id": 6793,
+      "name": "\u0420\u043e\u0441\u0442\u043e\u0432-\u043d\u0430-\u0414\u043e\u043d\u0443, \u041f\u043b\u0430\u0442\u043e\u0432",
+      "type": "Airport",
+      "display_code": "ROV"
+    },
+    {
+      "id": 226,
+      "alt_id": "IT",
+      "parent_id": 4,
+      "name": "\u0418\u0442\u0430\u043b\u0438\u044f",
+      "type": "Country",
+      "display_code": "IT"
+    },
+    {
+      "id": 228,
+      "alt_id": "HU",
+      "parent_id": 4,
+      "name": "\u0412\u0435\u043d\u0433\u0440\u0438\u044f",
+      "type": "Country",
+      "display_code": "HU"
+    },
+    {
+      "id": 229,
+      "alt_id": "MD",
+      "parent_id": 4,
+      "name": "\u041c\u043e\u043b\u0434\u0430\u0432\u0438\u044f",
+      "type": "Country",
+      "display_code": "MD"
+    },
+    {
+      "id": 5227,
+      "alt_id": "MOSC",
+      "parent_id": 191,
+      "name": "\u041c\u043e\u0441\u043a\u0432\u0430",
+      "type": "City",
+      "display_code": "MOW"
+    },
+    {
+      "id": 238,
+      "alt_id": "LV",
+      "parent_id": 4,
+      "name": "\u041b\u0430\u0442\u0432\u0438\u044f",
+      "type": "Country",
+      "display_code": "LV"
+    },
+    {
+      "id": 7152,
+      "alt_id": "SKOP",
+      "parent_id": 151,
+      "name": "\u0421\u043a\u043e\u043f\u044c\u0435",
+      "type": "City",
+      "display_code": "SKP"
+    },
+    {
+      "id": 17648,
+      "alt_id": "WAW",
+      "parent_id": 8336,
+      "name": "\u0412\u0430\u0440\u0448\u0430\u0432\u0430 (\u0424\u0440\u0435\u0434\u0435\u0440\u0438\u043a \u0428\u043e\u043f\u0435\u043d)",
+      "type": "Airport",
+      "display_code": "WAW"
+    },
+    {
+      "id": 240,
+      "alt_id": "BE",
+      "parent_id": 4,
+      "name": "\u0411\u0435\u043b\u044c\u0433\u0438\u044f",
+      "type": "Country",
+      "display_code": "BE"
+    },
+    {
+      "id": 16626,
+      "alt_id": "SVO",
+      "parent_id": 5227,
+      "name": "\u041c\u043e\u0441\u043a\u0432\u0430 \u0428\u0435\u0440\u0435\u043c\u0435\u0442\u044c\u0435\u0432\u043e",
+      "type": "Airport",
+      "display_code": "SVO"
+    },
+    {
+      "id": 17139,
+      "alt_id": "TSR",
+      "parent_id": 7693,
+      "name": "\u0422\u0438\u043c\u0438\u0448\u043e\u0430\u0440\u0430",
+      "type": "Airport",
+      "display_code": "TSR"
+    },
+    {
+      "id": 5363,
+      "alt_id": "MUNI",
+      "parent_id": 252,
+      "name": "\u041c\u044e\u043d\u0445\u0435\u043d",
+      "type": "City",
+      "display_code": "MUC"
+    },
+    {
+      "id": 252,
+      "alt_id": "DE",
+      "parent_id": 4,
+      "name": "\u0413\u0435\u0440\u043c\u0430\u043d\u0438\u044f",
+      "type": "Country",
+      "display_code": "DE"
+    },
+    {
+      "id": 6781,
+      "alt_id": "ROME",
+      "parent_id": 226,
+      "name": "\u0420\u0438\u043c",
+      "type": "City",
+      "display_code": "ROM"
+    },
+    {
+      "id": 2687,
+      "alt_id": "FRAN",
+      "parent_id": 252,
+      "name": "\u0424\u0440\u0430\u043d\u043a\u0444\u0443\u0440\u0442",
+      "type": "City",
+      "display_code": "FRA"
+    }
+  ],
+  "carriers": [
+    {
+      "id": -31171,
+      "name": "Fly One",
+      "alt_id": "52",
+      "display_code": "5F",
+      "display_code_type": "IATA"
+    },
+    {
+      "id": -31669,
+      "name": "Wizz Air",
+      "alt_id": "WZ",
+      "display_code": "W6",
+      "display_code_type": "IATA"
+    },
+    {
+      "id": -32478,
+      "name": "Brussels Airlines",
+      "alt_id": "SN",
+      "display_code": "SN",
+      "display_code_type": "IATA",
+      "alliance": -31999
+    },
+    {
+      "id": -31779,
+      "name": "TAROM",
+      "alt_id": "RO",
+      "display_code": "RO",
+      "display_code_type": "IATA",
+      "alliance": -31998
+    },
+    {
+      "id": -32090,
+      "name": "Lufthansa",
+      "alt_id": "LH",
+      "display_code": "LH",
+      "display_code_type": "IATA",
+      "alliance": -31999
+    },
+    {
+      "id": -32649,
+      "name": "Air Moldova",
+      "alt_id": "9U",
+      "display_code": "9U",
+      "display_code_type": "IATA"
+    },
+    {
+      "id": -32610,
+      "name": "airBaltic",
+      "alt_id": "BT",
+      "display_code": "BT",
+      "display_code_type": "IATA"
+    },
+    {
+      "id": -31685,
+      "name": "Vueling Airlines",
+      "alt_id": "07",
+      "display_code": "VY",
+      "display_code_type": "IATA"
+    },
+    {
+      "id": -31915,
+      "name": "Ryanair",
+      "alt_id": "FR",
+      "display_code": "FR",
+      "display_code_type": "IATA"
+    },
+    {
+      "id": -32741,
+      "name": "Aeroflot",
+      "alt_id": "SU",
+      "display_code": "SU",
+      "display_code_type": "IATA",
+      "alliance": -31998
+    },
+    {
+      "id": -32093,
+      "name": "LOT",
+      "alt_id": "LO",
+      "display_code": "LO",
+      "display_code_type": "IATA",
+      "alliance": -31999
+    },
+    {
+      "id": -31734,
+      "name": "Turkish Airlines",
+      "alt_id": "TK",
+      "display_code": "TK",
+      "display_code_type": "IATA",
+      "alliance": -31999
+    },
+    {
+      "id": -32089,
+      "name": "Lufthansa CityLine",
+      "alt_id": "CL",
+      "display_code": "CL",
+      "display_code_type": "IATA"
+    },
+    {
+      "id": -31913,
+      "name": "S7 Airlines",
+      "alt_id": "S7",
+      "display_code": "S7",
+      "display_code_type": "IATA",
+      "alliance": -32000
+    },
+    {
+      "id": -31717,
+      "name": "UTair",
+      "alt_id": "UT",
+      "display_code": "UT",
+      "display_code_type": "IATA"
+    }
+  ],
+  "alliances": [
+    {
+      "id": -31998,
+      "name": "SkyTeam"
+    },
+    {
+      "id": -31999,
+      "name": "Star Alliance"
+    },
+    {
+      "id": -32000,
+      "name": "OneWorld"
+    }
+  ],
+  "brands": [],
+  "agents": [
+    {
+      "id": "edru",
+      "name": "eDreams",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": false,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 2.12,
+      "feedback_count": 359,
+      "rating_breakdown": {
+        "reliable_prices": 1,
+        "clear_extra_fees": 4.567892,
+        "customer_service": 5,
+        "ease_of_booking": 3.89572,
+        "other": 1.063004
+      }
+    },
+    {
+      "id": "ozon",
+      "name": "ozon.travel",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": false,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.8,
+      "feedback_count": 20857,
+      "rating_breakdown": {
+        "reliable_prices": 4.6997,
+        "clear_extra_fees": 4.948576,
+        "customer_service": 5,
+        "ease_of_booking": 4.905544,
+        "other": 4.66148
+      }
+    },
+    {
+      "id": "go2c",
+      "name": "Go2See",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.55,
+      "feedback_count": 4568,
+      "rating_breakdown": {
+        "reliable_prices": 4.34372,
+        "clear_extra_fees": 4.928176,
+        "customer_service": 5,
+        "ease_of_booking": 4.754952,
+        "other": 4.17472
+      }
+    },
+    {
+      "id": "btix",
+      "name": "Biletix.ru",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.84,
+      "feedback_count": 12924,
+      "rating_breakdown": {
+        "reliable_prices": 4.819116,
+        "clear_extra_fees": 4.97692,
+        "customer_service": 5,
+        "ease_of_booking": 4.894172,
+        "other": 4.672332
+      }
+    },
+    {
+      "id": "vuel",
+      "name": "Vueling Airlines",
+      "is_carrier": true,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 5,
+      "feedback_count": 2291,
+      "rating_breakdown": {
+        "reliable_prices": 5,
+        "clear_extra_fees": 5,
+        "customer_service": 5,
+        "ease_of_booking": 5,
+        "other": 5
+      }
+    },
+    {
+      "id": "skyp",
+      "name": "Kiwi.com",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.35,
+      "feedback_count": 5290,
+      "rating_breakdown": {
+        "reliable_prices": 4.046132,
+        "clear_extra_fees": 4.806392,
+        "customer_service": 5,
+        "ease_of_booking": 4.724544,
+        "other": 3.805304
+      }
+    },
+    {
+      "id": "ryan",
+      "name": "Ryanair",
+      "is_carrier": true,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.89,
+      "feedback_count": 4064,
+      "rating_breakdown": {
+        "reliable_prices": 4.90798,
+        "clear_extra_fees": 4.978004,
+        "customer_service": 5,
+        "ease_of_booking": 4.863988,
+        "other": 4.8191
+      }
+    },
+    {
+      "id": "ottr",
+      "name": "OneTwoTrip",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": false,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.46,
+      "feedback_count": 23739,
+      "rating_breakdown": {
+        "reliable_prices": 4.04366,
+        "clear_extra_fees": 4.888616,
+        "customer_service": 5,
+        "ease_of_booking": 4.783112,
+        "other": 4.134932
+      }
+    },
+    {
+      "id": "kubi",
+      "name": "Kupibilet",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": false,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.49,
+      "feedback_count": 11399,
+      "rating_breakdown": {
+        "reliable_prices": 4.221888,
+        "clear_extra_fees": 4.9068,
+        "customer_service": 5,
+        "ease_of_booking": 4.738788,
+        "other": 4.098024
+      }
+    },
+    {
+      "id": "poso",
+      "name": "Pososhok.ru",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": false
+    },
+    {
+      "id": "citr",
+      "name": "City.Travel",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": false,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.94,
+      "feedback_count": 10621,
+      "rating_breakdown": {
+        "reliable_prices": 4.911884,
+        "clear_extra_fees": 4.9864,
+        "customer_service": 4.998328,
+        "ease_of_booking": 4.977032,
+        "other": 4.904616
+      }
+    },
+    {
+      "id": "ssev",
+      "name": "S7 Airlines",
+      "is_carrier": true,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 5,
+      "feedback_count": 21471,
+      "rating_breakdown": {
+        "reliable_prices": 5,
+        "clear_extra_fees": 5,
+        "customer_service": 5,
+        "ease_of_booking": 5,
+        "other": 5
+      }
+    },
+    {
+      "id": "trru",
+      "name": "Trip.ru",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.57,
+      "feedback_count": 9054,
+      "rating_breakdown": {
+        "reliable_prices": 4.578112,
+        "clear_extra_fees": 4.903588,
+        "customer_service": 5,
+        "ease_of_booking": 4.632132,
+        "other": 4.156908
+      }
+    },
+    {
+      "id": "tkru",
+      "name": "Tickets.ru",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.67,
+      "feedback_count": 14601,
+      "rating_breakdown": {
+        "reliable_prices": 4.649516,
+        "clear_extra_fees": 4.941128,
+        "customer_service": 5,
+        "ease_of_booking": 4.789844,
+        "other": 4.318876
+      }
+    },
+    {
+      "id": "turk",
+      "name": "Turkish Airlines",
+      "is_carrier": true,
+      "update_status": "current",
+      "optimised_for_mobile": false,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.48,
+      "feedback_count": 645,
+      "rating_breakdown": {
+        "reliable_prices": 4.337396,
+        "clear_extra_fees": 4.923964,
+        "customer_service": 5,
+        "ease_of_booking": 4.565508,
+        "other": 4.098428
+      }
+    },
+    {
+      "id": "suru",
+      "name": "Supersaver.ru",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.39,
+      "feedback_count": 14564,
+      "rating_breakdown": {
+        "reliable_prices": 4.282088,
+        "clear_extra_fees": 4.832184,
+        "customer_service": 4.964116,
+        "ease_of_booking": 4.53944,
+        "other": 3.952884
+      }
+    },
+    {
+      "id": "akas",
+      "name": "Aviakassa",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.84,
+      "feedback_count": 7606,
+      "rating_breakdown": {
+        "reliable_prices": 4.74338,
+        "clear_extra_fees": 4.965144,
+        "customer_service": 5,
+        "ease_of_booking": 4.935416,
+        "other": 4.718096
+      }
+    },
+    {
+      "id": "supk",
+      "name": "SuperKassa",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 3.94,
+      "feedback_count": 2543,
+      "rating_breakdown": {
+        "reliable_prices": 2.757284,
+        "clear_extra_fees": 4.883612,
+        "customer_service": 5,
+        "ease_of_booking": 4.610548,
+        "other": 3.522768
+      }
+    },
+    {
+      "id": "ctru",
+      "name": "Trip.com",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.45,
+      "feedback_count": 5943,
+      "rating_breakdown": {
+        "reliable_prices": 3.903156,
+        "clear_extra_fees": 4.909716,
+        "customer_service": 5,
+        "ease_of_booking": 4.814548,
+        "other": 4.177672
+      }
+    },
+    {
+      "id": "pobe",
+      "name": "Pobeda",
+      "is_carrier": true,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.99,
+      "feedback_count": 21842,
+      "rating_breakdown": {
+        "reliable_prices": 4.992096,
+        "clear_extra_fees": 4.995576,
+        "customer_service": 5,
+        "ease_of_booking": 4.9903,
+        "other": 4.977276
+      }
+    },
+    {
+      "id": "bidv",
+      "name": "Biletdv.ru",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": false,
+      "live_update_allowed": false
+    },
+    {
+      "id": "aebl",
+      "name": "AeroBilet",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.47,
+      "feedback_count": 7796,
+      "rating_breakdown": {
+        "reliable_prices": 4.086332,
+        "clear_extra_fees": 4.925872,
+        "customer_service": 4.933828,
+        "ease_of_booking": 4.757756,
+        "other": 4.19172
+      }
+    },
+    {
+      "id": "sind",
+      "name": "Sindbad",
+      "is_carrier": false,
+      "update_status": "current",
+      "optimised_for_mobile": true,
+      "live_update_allowed": true,
+      "rating_status": "available",
+      "rating": 4.97,
+      "feedback_count": 28195,
+      "rating_breakdown": {
+        "reliable_prices": 4.961632,
+        "clear_extra_fees": 4.99254,
+        "customer_service": 5,
+        "ease_of_booking": 4.98806,
+        "other": 4.939112
+      }
+    }
+  ],
+  "stats": {
+    "itineraries": {
+      "min_duration": 665,
+      "max_duration": 1685,
+      "min_longest_itinerary_leg_duration": 665,
+      "max_longest_itinerary_leg_duration": 1685,
+      "total": {
+        "count": 22,
+        "min_price": 12492.0
+      },
+      "stops": {
+        "direct": {
+          "total": {
+            "count": 0
+          },
+          "ticket": {
+            "single_ticket": {
+              "count": 0
+            },
+            "multi_ticket_non_npt": {
+              "count": 0
+            },
+            "multi_ticket_npt": {
+              "count": 0
+            }
+          }
+        },
+        "one_stop": {
+          "total": {
+            "count": 4,
+            "min_price": 12492.0
+          },
+          "ticket": {
+            "single_ticket": {
+              "count": 4,
+              "min_price": 12492.0
+            },
+            "multi_ticket_non_npt": {
+              "count": 0
+            },
+            "multi_ticket_npt": {
+              "count": 0
+            }
+          }
+        },
+        "two_plus_stops": {
+          "total": {
+            "count": 18,
+            "min_price": 12841.0
+          },
+          "ticket": {
+            "single_ticket": {
+              "count": 17,
+              "min_price": 12841.0
+            },
+            "multi_ticket_non_npt": {
+              "count": 0
+            },
+            "multi_ticket_npt": {
+              "count": 1,
+              "min_price": 21050.19
+            }
+          }
+        }
+      }
+    },
+    "legs": [
+      {
+        "index": 1,
+        "min_duration": 665,
+        "max_duration": 1685,
+        "count": 22,
+        "origins": [
+          {
+            "id": 16626,
+            "count": 5
+          },
+          {
+            "id": 17538,
+            "count": 5
+          },
+          {
+            "id": 11051,
+            "count": 12
+          }
+        ],
+        "destinations": [
+          {
+            "id": 10525,
+            "count": 22
+          }
+        ]
+      }
+    ],
+    "carriers": {
+      "single_carriers": [],
+      "multiple_carriers": {
+        "count": 22,
+        "min_price": 12492.0
+      }
+    },
+    "filter_hints": {
+      "enable_direct_filter": false,
+      "enable_one_stop_filter": true,
+      "enable_two_plus_stops_filter": true,
+      "check_direct_filter": false,
+      "check_one_stop_filter": true,
+      "check_two_plus_stops_filter": true,
+      "show_npt_filter": true,
+      "check_npt_filter": true
+    }
+  },
+  "quote_requests": [],
+  "quotes": [],
+  "flights_availability": {
+    "direct_exists": false,
+    "alternatives_exist": false
+  },
+  "repro_urls": {
+    "ps_repro_url": "",
+    "lus_repro_urls": []
+  },
+  "rejected_itineraries": [],
+  "plugins": []
+}

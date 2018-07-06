@@ -2,7 +2,7 @@ import json
 import time
 
 import requests
-from model import parse, Ticket
+from model import parse, Ticket, is_pending
 import logging
 
 log = logging.getLogger(__name__)
@@ -40,7 +40,7 @@ response = requests.post(
           "cabin_class": "economy",
           "prefer_directs": False,
           "trip_type": "one-way",
-          "legs": [{'origin': 'LTN', 'destination': 'CIA', 'date': '2018-07-30'}],
+          "legs": [{'origin': 'MOSC', 'destination': 'CIA', 'date': '2018-07-30'}],
           "adults": 1,
           "child_ages": [],
           "options": {"include_unpriced_itineraries": False, "include_mixed_booking_options": True}},
@@ -50,9 +50,7 @@ log.info(response)
 data = response.json()
 with open('start', 'w') as f:
     f.write(json.dumps(data, indent=2))
-result, pending = parse(data, Ticket)
-log.info('found %s pendinf %s' % (len(result), pending))
-if pending:
+while is_pending(data):
     time.sleep(10)
     headers = {
         'x-gateway-servedby': response.headers['x-gateway-servedby'],
@@ -66,5 +64,4 @@ if pending:
     data = response.json()
     with open('conductor', 'w') as f:
         f.write(json.dumps(data, indent=2))
-    result, pending = parse(data, Ticket)
-    log.info('found %s pendinf %s' % (len(result), pending))
+log.info('found %s' % (len(parse(data, Ticket))))
