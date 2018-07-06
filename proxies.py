@@ -1,8 +1,6 @@
-import sys
 import asyncio
 import time
 import traceback
-from collections import deque
 from queue import Queue
 from threading import Thread
 import logging
@@ -11,13 +9,30 @@ import logging
 log = logging.getLogger(__name__)
 
 
+class Borrower:
+    def __init__(self, proxies):
+        self.proxies = proxies
+        self.proxy = None
+        self.start = None
+
+    def __enter__(self):
+        self.proxy = self.proxies.get()
+        self.start = time.time()
+        return self.proxy
+
+    def __exit__(self, exc_type, exc_value, tb):
+        err = None
+        if exc_type is not None:
+            err = str(exc_value)
+        self.proxy.log('', stime=self.start, err=err)
+        self.proxies.put_back(self.proxy)
+
+
 class Proxies:
 
-    def __init__(self, cost_threshold=5, proxy_count_threshold=10, proxy_count=100):
+    def __init__(self, cost_threshold=5, proxy_count_threshold=100):
         self.cost_threshold = cost_threshold
         self.proxy_count_threshold = proxy_count_threshold
-        self.proxy_count = proxy_count
-
         self.proxies = Queue()
         self.bad_proxies = Queue()
         self.running = True
@@ -28,10 +43,6 @@ class Proxies:
         self.loop = loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
         import proxybroker
-        from proxybroker.providers import Tools_rosinstrument_com_socks, Tools_rosinstrument_com
-
-        judges = None  # ['https://proxyjudge.info/', 'http://proxyjudge.info/']
-        providers = None  # ['http://www.proxylists.net/', 'https://www.sslproxies.org/']
 
         async def show(proxies):
             while True:
@@ -40,7 +51,7 @@ class Proxies:
                     if proxy is None:
                         log.info('Proxy search complete found: %s' % self.proxies.qsize())
                         break
-                    log.info('Found proxy: %s (%s)' % (proxy, self.proxies.qsize()))
+                    # log.info('Found proxy: %s (%s)' % (proxy, self.proxies.qsize()))
                     self.proxies.put(proxy)
                 except:
                     traceback.print_exc()
@@ -49,24 +60,28 @@ class Proxies:
             if self.proxies.qsize() < self.proxy_count_threshold:
                 log.info('Got less that {} proxies, getting more'.format(self.proxy_count_threshold))
                 queue = asyncio.Queue()
-                broker = proxybroker.Broker(queue, judges=judges, providers=providers)
+                broker = proxybroker.Broker(queue)
                 tasks = asyncio.gather(
-                    broker.find(types=['SOCKS5']),
+                    broker.find(types=['HTTPS'], limit=500),
                     show(queue))
 
                 loop.run_until_complete(tasks)
             time.sleep(1)
 
-    def get(self):
-        log.info('Getting proxy')
-        return self.proxies.get()
+    def borrow(self):
+        return Borrower(self)
 
-    def put_back(self, proxy, cost):
-        if cost > self.cost_threshold:
+    def get(self):
+        proxy = self.proxies.get()
+        log.info('Got proxy {}'.format(proxy))
+        return proxy
+
+    def put_back(self, proxy):
+        if proxy.error_rate > .8:
             self.bad_proxies.put(proxy)
         else:
             self.proxies.put(proxy)
-        log.info('Putting back proxy {} with cost: {:.2f} {}/{}(bad)'.format(proxy, cost, self.proxies.qsize(), self.bad_proxies.qsize()))
+        log.info('Putting back proxy {} {}/{}(bad)'.format(proxy, self.proxies.qsize(), self.bad_proxies.qsize()))
 
 
 if __name__ == '__main__':
