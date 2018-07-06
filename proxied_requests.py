@@ -11,23 +11,21 @@ class Requests:
         self.proxies = Proxies()
 
     def request(self, method, url, **kwargs):
-        for i in range(5):
-            proxy = self.proxies.get()
+        exception = None
+        TRIES = 10
+        for i in range(TRIES):
             try:
-                start = time.time()
-                kwargs['proxies'] = dict(http='socks5://%s:%s' % (proxy.host, proxy.port),
-                                         https='socks5://%s:%s' % (proxy.host, proxy.port))
-                kwargs['timeout'] = (5, 10)
-                response = requests.request(method=method, url=url, **kwargs)
-                seconds = time.time() - start
-                log.info('Using %s %s %s %3.3f' % (proxy, response.status_code, len(response.content), seconds))
-                self.proxies.put_back(proxy, seconds)
-                return response
+                with self.proxies.borrow() as proxy:
+                    kwargs['proxies'] = dict(http='https://%s:%s' % (proxy.host, proxy.port),
+                                             https='https://%s:%s' % (proxy.host, proxy.port))
+                    kwargs['timeout'] = (10, 20)
+                    response = requests.request(method=method, url=url, **kwargs)
+                    response.json() # avoiding incorrect json even if 200
+                    return response
             except Exception as e:
-                self.proxies.put_back(proxy, 100)
-                log.error('Got exception %s try(%s/%s)' % (e, i + 1, 5))
-                if i == 4:
-                    raise
+                log.warning('Got exception %s try(%s/%s)' % (e, i + 1, TRIES))
+                exception = e
+        raise exception
 
     def get(self, url, params=None, **kwargs):
         kwargs.setdefault('allow_redirects', True)
