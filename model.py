@@ -1,3 +1,4 @@
+import json
 import logging
 from datetime import datetime, date
 from os.path import abspath
@@ -75,7 +76,7 @@ url = 'https://www.skyscanner.ru/g/conductor/v1/fps3/search/?geo_schema=skyscann
       'response_include=query%3Bdeeplink%3Bsegment%3Bstats%3Bfqs%3Bpqs%3B_flights_availability&force_fps=aws'
 
 
-def task(depart, arrive, date, requests):
+def task(date, depart, arrive, requests):
     if depart == arrive:
         return
     try:
@@ -96,8 +97,8 @@ def task(depart, arrive, date, requests):
         response = requests.post(url, json=data, headers=headers)
         data = response.json()
         if is_pending(data):
-            time.sleep(10)
-            for i in range(1, 5):
+            for i in range(1, 10):
+                time.sleep(10)
                 log.info('Processing {} {} {} try {}'.format(depart, arrive, date, i))
                 session_id = data['context']['session_id']
                 response = requests.get('https://www.skyscanner.ru/g/conductor/v1/fps3/search/{}?geo_schema=skyscanner&carrier_schema=skyscanner'
@@ -114,7 +115,7 @@ def task(depart, arrive, date, requests):
 
 def filter_out(tickets):
     prev_len = len(tickets)
-    tickets = list(filter(lambda ticket: ticket.stop_count < 3, tickets))
+    tickets = list(filter(lambda ticket: ticket.stop_count < 3 and ticket.price < 15000, tickets))
     log.info('Filtering out before:{} after:{}'.format(prev_len, len(tickets)))
     return tickets
 
@@ -129,7 +130,7 @@ def is_pending(data):
 def store(tickets):
     session = Session()
     try:
-        log.info('Storing {} tickets'.format(len(tickets)))
+        #log.info('Storing {} tickets'.format(len(tickets)))
         for ticket in tickets:
             changes = changeset(session.merge(ticket))
             changes.pop("search_date_time", None)
