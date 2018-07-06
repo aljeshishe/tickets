@@ -27,7 +27,7 @@ log_config = {
     'disable_existing_loggers': False,
     'formatters': {
         'verbose': {
-            'format': '%(asctime)s.%(msecs)03d|%(levelname)-4.4s|%(thread)-6.6s|%(funcName)-10.10s|%(message)s',
+            'format': '%(asctime)s.%(msecs)03d|%(levelname)-4.4s|%(thread)-6.6s|%(module)-6.6s|%(funcName)-10.10s|%(message)s',
             'datefmt': '%Y/%m/%d %H:%M:%S',
         },
     },
@@ -40,6 +40,14 @@ log_config = {
             'mode': 'w',
             'encoding': 'utf8',
         },
+        'proxybroker_file_handler': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'proxybroker_%s.log' % datetime.now().strftime("%d%m%y_%H%M%S"),
+            'formatter': 'verbose',
+            'mode': 'w',
+            'encoding': 'utf8',
+        },
         'console_handler': {
             'level': 'INFO',
             'class': 'logging.StreamHandler',
@@ -47,9 +55,24 @@ log_config = {
         },
     },
     'loggers': {
+        'proxybroker': {
+            'handlers': ['proxybroker_file_handler'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+        'proxied_requests': {
+            'handlers': ['proxybroker_file_handler'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
         'requests': {
             'handlers': ['file_handler', 'console_handler'],
-            'level': 'DEBUG',
+            'level': 'INFO',
+            'propagate': False,
+        },
+        'urllib3': {
+            'handlers': ['file_handler', 'console_handler'],
+            'level': 'INFO',
             'propagate': False,
         },
     },
@@ -64,6 +87,7 @@ airports ='''AGP
 ALC
 AMS
 ARN
+ATH
 BCN
 BGO
 BGY
@@ -72,29 +96,46 @@ BOJ
 BRE
 BRI
 BUD
+BVA
 CGN
 CIA
 CPH
 CRL
+DME
 DUB
 DUS
+FCO
 FMO
 FRA
+GDN
 GVA
 HAJ
 HEL
 IEV
+LED
 LEJ
+LGW
+LIS
+LTN
 MAD
 MLA
 MUC
+MXP
 OSL
+OTP
+PMI
+PRG
 PSA
+RIX
+SAW
+SOF
 STN
 STR
+SVO
 SVQ
 SXF
 TLL
+TXL
 VAR
 VIE
 VKO
@@ -103,12 +144,19 @@ VNO
 WAW'''
 if __name__ == '__main__':
     logging.config.dictConfig(log_config)
-    airports = ['BERL', 'BOJ', 'BRE', 'BTS', 'BUD', 'CGN', 'DEB', 'DUS', 'HAJ', 'HAM', 'LED', 'LTN', 'MILA', 'MOSC', 'MUC', 'PARI', 'PMI', 'STR', 'TLL', 'RIX', 'VNO', 'VIE', 'CIA']
-    # airports = airports.split()
+    # 23! * 5 2635
+    # 22 2410
+    # 21 2195
+    # airports = ['BERL', 'BOJ', 'BRE', 'BTS', 'BUD', 'CGN', 'DEB', 'DUS', 'HAJ', 'HAM', 'LED', 'LTN', 'MILA', 'MOSC', 'MUC', 'PARI', 'PMI', 'STR', 'TLL', 'RIX', 'VNO', 'VIE', 'CIA']
+    airports = airports.split()
+    print('Airports: %s' % len(airports))
+    p = Processor(60)
+    requests = proxied_requests.Requests()
     tasks = generator(task=task,
+                      date=date_range(date(2018, 11, 3), 5),
                       depart=airports,
                       arrive=airports,
-                      date=date_range(date(2018, 10, 15), 5),
-                      requests=proxied_requests.Requests())
-    p = Processor(5)
-    p.run(tasks)
+                      requests=requests)
+    p.add_tasks(tasks)
+    p.wait_done()
+    p.stop()
