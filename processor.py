@@ -5,7 +5,6 @@ import logging
 
 log = logging.getLogger(__name__)
 
-
 class Processor:
     POISON_PILL = 'POISON_PILL'
 
@@ -29,7 +28,7 @@ class Processor:
             try:
                 task()
             except Exception:
-                traceback.print_exc()
+                log.exception('Exception')
             finally:
                 self.tasks.task_done()
 
@@ -38,7 +37,7 @@ class Processor:
 
     def wait_done(self):
         self.tasks.join()
-        print('all done')
+        log.info('all done')
 
     def stop(self):
         for thread in self.threads:
@@ -46,11 +45,14 @@ class Processor:
 
         for thread in self.threads:
             thread.join()
-        print('stopped')
+        log.info('stopped')
 
-    def run(self, tasks):
+    def add_tasks(self, tasks):
         for task in tasks:
             self.add(task)
-        print('%s tasks added' % self.tasks.qsize())
+        log.info('%s tasks added' % self.tasks.qsize())
+
+    def run(self, tasks):
+        self.add_tasks(tasks)
         self.wait_done()
         self.stop()
