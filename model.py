@@ -67,7 +67,7 @@ headers = {
     "x-distil-ajax": "azezcavtdrrxfqrtbw",
     "x-skyscanner-channelid": "website",
     "x-skyscanner-devicedetection-ismobile": "false",
-    "user-agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36",
+    "user-agent": "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36",
     "content-type": "application/json; charset=UTF-8",
     "accept": "application/json, text/javascript, */*; q=0.01",
     "referer": "https://www.skyscanner.ru/transport/flights/mosc/led/180901/?adults=1&children=0&adultsv2=1&childrenv2=&infants=0&cabinclass=economy&rtn=0&preferdirects=false&outboundaltsenabled=false&inboundaltsenabled=false&ref=home",
@@ -101,10 +101,12 @@ def task(date, depart, arrive, requests):
                 time.sleep(10)
                 log.info('Processing {} {} {} try {}'.format(depart, arrive, date, i))
                 session_id = data['context']['session_id']
-                response = requests.get('https://www.skyscanner.ru/g/conductor/v1/fps3/search/{}?geo_schema=skyscanner&carrier_schema=skyscanner'
-                                        '&response_include=query%3Bdeeplink%3Bsegment%3Bstats%3Bfqs%3Bpqs%3B_flights_availability&force_fps=aws&_=1529877736386'.format(session_id),
+                response = requests.get('https://www.skyscanner.ru/g/conductor/v1/fps3/search/{}'
+                                        '?geo_schema=skyscanner&carrier_schema=skyscanner&response_include=query%3Bdeeplink%3Bsegment%3Bstats%3Bfqs%3Bpqs%3B_flights_availability&'
+                                        'force_fps=aws&_=1529877736386'.format(session_id),
                                         headers={'x-gateway-servedby': response.headers['x-gateway-servedby'],
-                                                 'x-skyscanner-channelid': 'website'})
+                                                 'x-skyscanner-channelid': 'website',
+                                                 'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'})
                 data = response.json()
                 if not is_pending(data):
                     break
@@ -190,4 +192,4 @@ if __name__ == '__main__':
     Base.metadata.create_all()
     import requests
 
-    task('AGP', 'AMS', date(2018, 10, 19), requests)
+    task(date(2018, 10, 19), 'AGP', 'AMS', requests)

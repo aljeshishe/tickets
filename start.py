@@ -55,6 +55,7 @@ while is_pending(data):
     headers = {
         'x-gateway-servedby': response.headers['x-gateway-servedby'],
         'x-skyscanner-channelid': 'website',
+        'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'
     }
     session_id = data['context']['session_id']
     response = requests.get('https://www.skyscanner.ru/g/conductor/v1/fps3/search/{}?geo_schema=skyscanner&carrier_schema=skyscanner'
