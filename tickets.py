@@ -150,10 +150,16 @@ if __name__ == '__main__':
     # airports = ['BERL', 'BOJ', 'BRE', 'BTS', 'BUD', 'CGN', 'DEB', 'DUS', 'HAJ', 'HAM', 'LED', 'LTN', 'MILA', 'MOSC', 'MUC', 'PARI', 'PMI', 'STR', 'TLL', 'RIX', 'VNO', 'VIE', 'CIA']
     airports = airports.split()
     print('Airports: %s' % len(airports))
-    p = Processor(60)
+    p = Processor(30)
     requests = proxied_requests.Requests()
     tasks = generator(task=task,
-                      date=date_range(date(2018, 11, 3), 5),
+                      date=date_range(date(2018, 10, 16), 5),
+                      depart=airports,
+                      arrive=airports,
+                      requests=requests)
+    p.add_tasks(tasks)
+    tasks = generator(task=task,
+                      date=date_range(date(2018, 11, 2), 5),
                       depart=airports,
                       arrive=airports,
                       requests=requests)
