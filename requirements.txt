@@ -1,1 +1,1 @@
--e git://github.com/aljeshishe/ProxyBroker.git@74c5da96036c33c402f7935ca48d2a0d946eebff#egg=proxybroker
+-e git://github.com/aljeshishe/ProxyBroker.git@705823e2ed22892e42f281ca09194530b69a9431#egg=proxybroker
