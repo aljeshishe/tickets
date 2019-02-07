@@ -17,11 +17,6 @@ log = logging.getLogger(__name__)
 Base = declarative_base()
 
 
-class Airport(Base):
-    __tablename__ = 'airport'
-    code = Column(String(5), primary_key=True)
-    name = Column(String(32))
-
 
 class Ticket(Base):
     __tablename__ = 'ticket'
@@ -76,56 +71,70 @@ url = 'https://www.skyscanner.ru/g/conductor/v1/fps3/search/?geo_schema=skyscann
       'response_include=query%3Bdeeplink%3Bsegment%3Bstats%3Bfqs%3Bpqs%3B_flights_availability&force_fps=aws'
 
 
-def task(date, depart, arrive, requests):
+def task(date, depart, arrive, requests, max_price=15000, max_stops=3):
     if depart == arrive:
         return
-    try:
-        log.info('Processing {} {} {} try {}'.format(depart, arrive, date, 0))
-        data = {"market": "RU",
-                "currency": "RUB",
-                "locale": "ru-RU",
-                "cabin_class": "economy",
-                "prefer_directs": False,
-                "trip_type": "one-way",
-                "legs": [{"origin": depart, "destination": arrive, "date": date.strftime('%Y-%m-%d')}],
-                "adults": 1,
-                "child_ages": [],
-                "options": {"include_unpriced_itineraries": True, "include_mixed_booking_options": True}}
-        log.debug('post: {} data: {}'.format(url, data))
-        # with open('start', 'w') as f:
-        #     f.write(json.dumps(data, indent=2))
-        response = requests.post(url, json=data, headers=headers)
-        data = response.json()
-        if is_pending(data):
-            for i in range(1, 10):
-                time.sleep(10)
-                log.info('Processing {} {} {} try {}'.format(depart, arrive, date, i))
-                session_id = data['context']['session_id']
-                response = requests.get('https://www.skyscanner.ru/g/conductor/v1/fps3/search/{}'
-                                        '?geo_schema=skyscanner&carrier_schema=skyscanner&response_include=query%3Bdeeplink%3Bsegment%3Bstats%3Bfqs%3Bpqs%3B_flights_availability&'
-                                        'force_fps=aws&_=1529877736386'.format(session_id),
-                                        headers={'x-gateway-servedby': response.headers['x-gateway-servedby'],
-                                                 'x-skyscanner-channelid': 'website',
-                                                 'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'})
-                data = response.json()
-                if not is_pending(data):
-                    break
-        store(filter_out(parse(data, Ticket)))
-    except Exception as ex:
-        log.exception('Exception')
+    for m in range(1, 10):
+        try:
+            log.info('Processing {} {} {} try {}'.format(depart, arrive, date, m))
+            data = {"market": "RU",
+                    "currency": "RUB",
+                    "locale": "ru-RU",
+                    "cabin_class": "economy",
+                    "prefer_directs": False,
+                    "trip_type": "one-way",
+                    "legs": [{"origin": depart, "destination": arrive, "date": date.strftime('%Y-%m-%d')}],
+                    "adults": 1,
+                    "child_ages": [],
+                    "options": {"include_unpriced_itineraries": True, "include_mixed_booking_options": True}}
+            log.debug('post: {} data: {}'.format(url, data))
+            # with open('start', 'w') as f:
+            #     f.write(json.dumps(data, indent=2))
+            response = requests.post(url, json=data, headers=headers)
+            if response.status_code != 200:
+                log.debug('response {}'.format(response.status_code))
+                continue
+            data = response.json()
+            session_id = data['context']['session_id']
+            if is_pending(data):
+                for i in range(1, 10):
+                    time.sleep(10)
+                    log.info('Processing {} {} {} try {}'.format(depart, arrive, date, i))
+                    log.debug('post: {}'.format(url))
+                    response = requests.get('https://www.skyscanner.ru/g/conductor/v1/fps3/search/{}'
+                                            '?geo_schema=skyscanner&carrier_schema=skyscanner&response_include=query%3Bdeeplink%3Bsegment%3Bstats%3Bfqs%3Bpqs%3B_flights_availability&'
+                                            'force_fps=aws&_=1529877736386'.format(session_id),
+                                            headers={'x-gateway-servedby': response.headers['x-gateway-servedby'],
+                                                     'x-skyscanner-channelid': 'website',
+                                                     'user-agent': 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36'})
+                    data = response.json()
+                    if response.status_code != 200:
+                        log.debug('response {}'.format(response.status_code))
+                        continue
+                    if not is_pending(data):
+                        break
+            store(filter_out(parse(data, Ticket), max_price, max_stops))
+            return
+        except Exception as ex:
+            log.exception('Exception')
+        log.info('Error processing {} {} {} try {}'.format(depart, arrive, date, m))
 
 
-def filter_out(tickets):
+def filter_out(tickets, max_price, max_stops):
     prev_len = len(tickets)
-    tickets = list(filter(lambda ticket: ticket.stop_count < 3 and ticket.price < 15000, tickets))
+    tickets = list(filter(lambda ticket: ticket.stop_count < max_stops and ticket.price < max_price, tickets))
     log.info('Filtering out before:{} after:{}'.format(prev_len, len(tickets)))
     return tickets
 
 
 def is_pending(data):
-    agents_pending = [agent['update_status'] == 'pending' for agent in data["agents"]].count(True)
+    agents = data.get('agents')
+    if not agents:
+        log.warning('got capcha')
+        return 1
+    agents_pending = [agent['update_status'] == 'pending' for agent in agents].count(True)
     log.info('itineraries:{} legs:{} carriers:{} agents:{}(pending:{}) places:{}'.format(len(data["itineraries"]), len(data["legs"]), len(data["carriers"]),
-                                                                                         len(data["agents"]), agents_pending, len(data["places"])))
+                                                                                         len(agents), agents_pending, len(data["places"])))
     return agents_pending
 
 
@@ -192,4 +201,4 @@ if __name__ == '__main__':
     Base.metadata.create_all()
     import requests
 
-    task(date(2018, 10, 19), 'AGP', 'AMS', requests)
+    task(date(2019, 12, 10), 'LED', 'MOSC', requests)
