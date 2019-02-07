@@ -40,18 +40,19 @@ response = requests.post(
           "cabin_class": "economy",
           "prefer_directs": False,
           "trip_type": "one-way",
-          "legs": [{'origin': 'MOSC', 'destination': 'CIA', 'date': '2018-07-30'}],
+          "legs": [{'origin': 'MOSC', 'destination': 'LED', 'date': '2019-04-02'}],
           "adults": 1,
           "child_ages": [],
           "options": {"include_unpriced_itineraries": False, "include_mixed_booking_options": True}},
+    #proxies=dict(https='https://36.66.110.138:8080'),
     headers=headers)
 
 log.info(response)
 data = response.json()
-with open('start', 'w') as f:
-    f.write(json.dumps(data, indent=2))
+with open('start', 'w', encoding='utf8') as f:
+    f.write(json.dumps(data, indent=2, ensure_ascii=False))
 while is_pending(data):
-    time.sleep(10)
+    time.sleep(3)
     headers = {
         'x-gateway-servedby': response.headers['x-gateway-servedby'],
         'x-skyscanner-channelid': 'website',
@@ -60,9 +61,10 @@ while is_pending(data):
     session_id = data['context']['session_id']
     response = requests.get('https://www.skyscanner.ru/g/conductor/v1/fps3/search/{}?geo_schema=skyscanner&carrier_schema=skyscanner'
                             '&response_include=query%3Bdeeplink%3Bsegment%3Bstats%3Bfqs%3Bpqs%3B_flights_availability&force_fps=aws&_=1529877736386'.format(session_id),
+        #proxies=dict(https='https://36.66.110.138:8080'),
         headers=headers)
     print(response)
     data = response.json()
-    with open('conductor', 'w') as f:
-        f.write(json.dumps(data, indent=2))
+    with open('conductor', 'w', encoding='utf8') as f:
+        f.write(json.dumps(data, indent=2, ensure_ascii=False))
 log.info('found %s' % (len(parse(data, Ticket))))
