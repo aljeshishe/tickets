@@ -16,11 +16,11 @@ class Requests:
         for i in range(TRIES):
             try:
                 with self.proxies.borrow() as proxy:
-                    kwargs['proxies'] = dict(http='https://%s:%s' % (proxy.host, proxy.port),
+                    kwargs['proxies'] = dict(http='http://%s:%s' % (proxy.host, proxy.port),
                                              https='https://%s:%s' % (proxy.host, proxy.port))
                     kwargs['timeout'] = (10, 20)
                     response = requests.request(method=method, url=url, **kwargs)
-                    response.json() # avoiding incorrect json even if 200
+                    response.json()  # avoiding incorrect json even if 200
                     return response
             except Exception as e:
                 log.warning('Got exception %s try(%s/%s)' % (e, i + 1, TRIES))
