@@ -22,10 +22,9 @@ class Borrower:
         return self.proxy
 
     def __exit__(self, exc_type, exc_value, tb):
-        err = None
-        if exc_type is not None:
-            err = str(exc_value)
-        self.proxy.log('', stime=self.start, err=err)
+        if exc_value is not None:
+            exc_value.errmsg = str(exc_value)
+        self.proxy.log('', stime=self.start, err=exc_value)
         self.proxies.put_back(self.proxy)
 
 
@@ -54,6 +53,7 @@ class Proxies:
                         log.info('Proxy search complete found: %s' % self.proxies.qsize())
                         break
                     # log.info('Found proxy: %s (%s)' % (proxy, self.proxies.qsize()))
+                    proxy._runtimes = proxy._runtimes[:1]
                     self.proxies.put(proxy)
                 except:
                     traceback.print_exc()
@@ -81,7 +81,7 @@ class Proxies:
         return proxy
 
     def put_back(self, proxy):
-        if proxy.error_rate > .8:
+        if sum(proxy.stat['errors'].values()) > 3:
             self.bad_proxies.put(proxy)
         else:
             self.proxies.put(proxy)
