@@ -18,7 +18,7 @@ def alembic(*args):
 def create():
     from sqlalchemy import create_engine
     engine = create_engine(model.SQLALCHEMY_SERVER_URI, echo=True)
-    engine.execute("CREATE DATABASE IF NOT EXISTS %s DEFAULT CHARACTER SET utf8mb4" % model.SQLALCHEMY_DATABASE_NAME)
+    engine.execute("CREATE DATABASE IF NOT EXISTS %s DEFAULT CHARSET=UTF8MB4" % model.SQLALCHEMY_DATABASE_NAME)
 
 
 @args.command
