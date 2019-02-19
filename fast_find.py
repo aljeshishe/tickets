@@ -5,7 +5,8 @@ from datetime import datetime, timedelta
 import time
 
 from heapq import heappush, heappop
-from model import Ticket, Session
+from model import Ticket
+from db import Session
 
 
 def bisect_left(a, x, key_name, lo=0, hi=None):

@@ -4,7 +4,8 @@ import time
 from datetime import datetime
 
 from heapq import heappush, heappop
-from model import Ticket, Session
+from model import Ticket
+from db import Session
 
 
 class Path:

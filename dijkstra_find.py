@@ -10,7 +10,8 @@ from collections import defaultdict
 
 from datetime import timedelta
 
-from model import Session, Ticket
+from model import Ticket
+from db import Session
 
 
 class N:

@@ -1,10 +1,15 @@
 # -*- coding: utf-8 -*-
-import re
 import sys
 from grachev import args
 from alembic.config import main
+from sqlalchemy import create_engine
+from sqlalchemy.orm import scoped_session, sessionmaker
 
-import model
+SQLALCHEMY_DATABASE_NAME = 'tickets'
+SQLALCHEMY_SERVER_URI = 'mysql+pymysql://root:root@localhost:33306'
+SQLALCHEMY_DATABASE_URI = '%s/%s?charset=utf8mb4' % (SQLALCHEMY_SERVER_URI, SQLALCHEMY_DATABASE_NAME)
+engine = create_engine(SQLALCHEMY_DATABASE_URI, echo=False)
+Session = scoped_session(sessionmaker(bind=engine))
 
 
 @args.command
@@ -16,16 +21,12 @@ def alembic(*args):
 
 @args.command
 def create():
-    from sqlalchemy import create_engine
-    engine = create_engine(model.SQLALCHEMY_SERVER_URI, echo=True)
-    engine.execute("CREATE DATABASE IF NOT EXISTS %s DEFAULT CHARSET=UTF8MB4" % model.SQLALCHEMY_DATABASE_NAME)
+    engine.execute("CREATE DATABASE IF NOT EXISTS %s DEFAULT CHARSET=UTF8MB4" % SQLALCHEMY_DATABASE_NAME)
 
 
 @args.command
 def drop():
-    from sqlalchemy import create_engine
-    engine = create_engine(model.SQLALCHEMY_SERVER_URI, echo=True)
-    engine.execute("DROP DATABASE IF EXISTS %s" % model.SQLALCHEMY_DATABASE_NAME)
+    engine.execute("DROP DATABASE IF EXISTS %s" % SQLALCHEMY_DATABASE_NAME)
 
 
 
