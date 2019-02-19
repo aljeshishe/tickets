@@ -88,8 +88,12 @@ def pairwise(iterable):
 
 def prepare(night_price=0):
     #result = Session.query(Ticket).order_by(Ticket.depart_date_time).all()
-    result = Session.query(Ticket).filter(Ticket.depart_date_time > '2018-10-10').filter(Ticket.price < 5000)\
-        .order_by(Ticket.depart_airport_code).order_by(Ticket.depart_date_time).all()
+    result = Session.query(Ticket).\
+        filter(Ticket.depart_date_time > '2018-10-10').\
+        filter(Ticket.arrive_date_time < '2018-10-21 15:00:00').\
+        filter(Ticket.price < 8000).\
+        order_by(Ticket.depart_airport_code).\
+        order_by(Ticket.depart_date_time).all()
     print('Got %s records from db' % len(result))
     graph = defaultdict(dict)
     cities = defaultdict(list)
@@ -130,14 +134,14 @@ def output(graph, cities):
                     short_path.append(cur.ticket)
                 prev = cur
                 cur = cur.prev
-            print(short_path)
+            #print(short_path)
             results.add((nodes.price, sum([ticket.price for ticket in short_path]), tuple(short_path)))
             pass
         for total_price, tickets_price, tickets in sorted(results, key=itemgetter(0)):
             print(total_price, tickets_price, tickets)
 
 
-graph, cities = prepare(night_price=1000)
+graph, cities = prepare(night_price=0)
 dest = cities['PMI'][-1]
 print('Searching to %s' % dest)
 start = time.time()

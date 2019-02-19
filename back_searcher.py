@@ -1,5 +1,7 @@
 from bisect import bisect_left, bisect_right
 from collections import defaultdict
+from datetime import timedelta
+from itertools import chain
 from operator import attrgetter
 
 import sys
@@ -51,6 +53,11 @@ def bisect_right(a, x, key_name, lo=0, hi=None):
         else:
             lo = mid + 1
     return lo
+
+
+class Info:
+    def __init__(self, **kwargs):
+        self.__dict__.update(**kwargs)
 
 
 class Ticket:
@@ -124,6 +131,7 @@ class BackSearcher:
 
     def add_neighbour(self, start, finish):
         self.neighbours[start].append(finish)
+        self.neighbours[finish].append(start)
 
     def search(self, finish, date):
         result = StartTicket(finish, date)
@@ -131,20 +139,26 @@ class BackSearcher:
         self._search(path, result)
         return result
 
+    def _neighbour_tickets(self, city, date):
+        for depart_city in self.neighbours.get(city, []):
+            ticket = Ticket(Info(depart_airport_code=depart_city, depart_date_time=date - timedelta(minutes=1),
+                                 arrive_airport_code=city, arrive_date_time=date - timedelta(minutes=2),
+                                 duration=0, stop_count=0, price=0))
+            yield depart_city, [ticket]
+
     def _search(self, path, prev_ticket=None):
         city = prev_ticket.depart_airport_code
         date = prev_ticket.depart_date_time
-        price = prev_ticket.price
-        path.add(city, price)
+        path.add(city, prev_ticket.price)
         min = sys.maxsize
-        for source, tickets in self.data[city].items():
-            if source in path:
+        for depart_city, tickets in chain(self._neighbour_tickets(city, date), self.data[city].items()):
+            if depart_city in path:
                 continue
-            fileterd_tickets = bisect_range(tickets, date - self.max_days_in_city[city], date, key_name='arrive_date_time')
-            if not fileterd_tickets:
+            filtered_tickets = bisect_range(tickets, date - self.max_days_in_city[city], date, key_name='arrive_date_time')
+            if not filtered_tickets:
                 continue
 
-            for ticket in fileterd_tickets:
+            for ticket in filtered_tickets:
                 if ticket.depart_airport_code == self.finish:
                     ticket.sum = ticket.price
                 else:
@@ -159,6 +173,6 @@ class BackSearcher:
                 prev_ticket.tickets.append(ticket)
                 if ticket.sum < min:
                     min = ticket.sum
-        path.remove(city, price)
+        path.remove(city, prev_ticket.price)
         prev_ticket.tickets.sort(key=attrgetter('sum'))
         return min
