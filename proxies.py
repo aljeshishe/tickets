@@ -1,4 +1,5 @@
 import asyncio
+import random
 import time
 import traceback
 from queue import Queue
@@ -61,6 +62,8 @@ class Proxies:
                 log.info('Got less that {} proxies, getting more'.format(self.proxy_count_threshold))
                 queue = asyncio.Queue()
                 broker = proxybroker.Broker(queue)
+                random.seed()
+                random.shuffle(broker._providers)
                 tasks = asyncio.gather(
                     broker.find(types=['HTTPS'], limit=500),
                     show(queue))
