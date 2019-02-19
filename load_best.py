@@ -8,4 +8,14 @@ except IndexError:
 
 with open(file_name, 'rb') as f:
     data = pickle.load(f)
+cities = ['LED', 'PMI', 'RIX', 'TLL', 'HEL', 'VKO', 'DME', 'SVO']
+for city in cities:
+    print(city)
+    print('destinations')
+    for item in filter(lambda pair: pair[1] < 3000, data[city].destinations):
+        print(item)
+
+    print('sources')
+    for item in filter(lambda pair: pair[1] < 3000, data[city].sources):
+        print(item)
 print(data)

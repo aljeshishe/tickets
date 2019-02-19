@@ -1,4 +1,5 @@
 import datetime
+import logging
 import pickle
 from collections import defaultdict
 from functools import partial
@@ -43,10 +44,11 @@ class Node:
                                                                        len(self.dst), min(self.dst.values() or [0]))
     __repr__ = __str__
 
+
 requests = proxied_requests.Requests()
 results = {}
 processed = set()
-proc = Processor(30)
+proc = Processor(60)
 lock = RLock()
 
 
@@ -58,30 +60,28 @@ def best(start, depth):
         processed.add(start)
     depth -= 1
     top_price = 5000
-    resp = requests.get('https://top100.aviasales.ru/api/?origin={}&one_way=true&duration_min=8&duration_max=18'
-                        '&without_visa=false&domestic=true&foreign=true'.format(start))
+    resp = requests.get('https://lyssa.aviasales.ru/map?origin_iata={}&one_way=true&min_trip_duration=1&max_trip_duration=30'.format(start))
     resp.raise_for_status()
     data = resp.json()
     for item in data:
-        price = item['price']
+        price = item['value']
         if price < top_price:
-            # link: https://search.aviasales.ru/AMS1807PFO1
-            src = item['link'][-11:-8]  # cut AMS
-            dst = item['link'][-4:-1]  # cut PFO
+            src = item['origin']
+            dst = item['destination']
             with lock:
                 start_node = results.setdefault(src, Node(start))
                 dest_node = results.setdefault(dst, Node(dst))
-                dest_node.name = item['destination']['name']
+                dest_node.name = ''
                 start_node.to(dest_node, price)
                 if dst in processed or depth < 0:
                     continue
-            proc.add(partial(best, dst, depth))
+            proc.add(partial(best, start=dst, depth=depth))
 
 
 if __name__ == '__main__':
     starts = ['LED', 'PMI']
     for start in starts:
-        proc.add(partial(best, start, 5))
+        proc.add(partial(best, start=start, depth=5))
     proc.wait_done()
     for result in sorted(results.values(), key=attrgetter('priority')):
         print('{}'.format(result))
