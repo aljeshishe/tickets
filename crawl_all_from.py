@@ -1,0 +1,42 @@
+import logging
+from datetime import date
+import log_config
+import proxied_requests
+from generator import generator
+from model import task
+from processor import Processor
+from utils import date_range
+
+log_config.configure()
+log = logging.getLogger(__name__)
+__author__ = 'alexey.grachev'
+
+# MOSC москва
+# DME
+# all: ["ABA", "AUH", "ADD", "ALC", "AMM", "AAQ", "AYT", "KVK", "ARH", "ASB", "ASF", "ATH", "GYD", "BKK", "BCN", "BRI", "BAX", "BUS", "NBC", "EGO", "BEG", "TXL", "OGZ", "FRU", "BOJ", "BTK", "BRU", "UUA", "CAG", "CAI", "CMN", "CTA", "CEK", "CEE", "MRV", "KIV", "HTA", "DOH", "DXB", "DUB", "DBV", "DYU", "DUS", "DMB", "VDA", "FEG", "FRA", "KVD", "GDZ", "GVA", "GOA", "RGK", "HAN", "IBZ", "INN", "IKT", "SAW", "IJK", "KLX", "KGD", "KZN", "KEF", "KEJ", "KSQ", "LBD", "KRR", "KJA", "TJU", "KUT", "LLK", "LCA", "LPK", "LIS", "LHR", "MAD", "MCX", "AGP", "MSQ", "MJZ", "BAH", "MUC", "MMK", "MCT", "NYM", "NMA", "NAP", "NVI", "NJC", "GOJ", "NSK", "NOZ", "OVB", "NUX", "NOJ", "NCU", "OLB", "OMS", "URA", "OSS", "UKK", "PMI", "PFO", "PED", "ORY", "PWQ", "PEZ", "PEE", "PES", "PSA", "PDV", "PUY", "RHO", "RMI", "FCO", "ROV", "SLY", "SZG", "KUF", "SKD", "LED", "SKX", "RTW", "SHJ", "SIP", "SIN", "AER", "STW", "ARN", "SGC", "SVX", "SCW", "TAS", "TBS", "TLV", "TFS", "SKG", "TIV", "NRT", "TOF", "TRN", "TJM", "PYJ", "UFA", "UCT", "UUD", "UGC", "URC", "USK", "VAR", "VCE", "VRN", "VIE", "VVO", "VOG", "VOZ", "WAW", "EVN", "ZRH"]
+# non ru: ["AUH", "ADD", "ALC", "AMM", "AYT", "ASB", "ATH", "GYD", "BKK", "BCN", "BRI", "BUS", "BEG", "TXL", "FRU", "BOJ", "BRU", "CAG", "CAI", "CMN", "CTA", "KIV", "DOH", "DXB", "DUB", "DBV", "DYU", "DUS", "DMB", "VDA", "FEG", "FRA", "KVD", "GVA", "GOA", "HAN", "IBZ", "INN", "SAW", "KLX", "KEF", "KSQ", "LBD", "TJU", "KUT", "LLK", "LCA", "LIS", "LHR", "MAD", "AGP", "MSQ", "BAH", "MUC", "MCT", "NMA", "NAP", "NVI", "NCU", "OLB", "URA", "OSS", "UKK", "PMI", "PFO", "PED", "ORY", "PWQ", "PSA", "PDV", "PUY", "RHO", "RMI", "FCO", "SZG", "SKD", "SHJ", "SIP", "SIN", "ARN", "TAS", "TBS", "TLV", "TFS", "SKG", "TIV", "NRT", "TRN", "UGC", "URC", "VAR", "VCE", "VRN", "VIE", "WAW", "EVN", "ZRH"]
+# vko
+# all: ["SCO", "DYR", "ESB", "AYT", "ARH", "ASF", "ATH", "BGW", "GYD", "EGO", "BGY", "TXL", "OGZ", "BTS", "BUD", "BHK", "CUN", "CSY", "CEK", "MRV", "CIT", "KIV", "NER", "CGN", "DAM", "DEB", "DJE", "DXB", "DYU", "ESL", "FEG", "GBB", "KVD", "GRO", "GRV", "LWN", "HEL", "HER", "IKT", "IST", "SAW", "IJK", "KGD", "KLV", "FKB", "KVA", "KZN", "KEJ", "HMA", "KVX", "KGP", "KRR", "KJA", "KRO", "URS", "KYZ", "LLK", "LCA", "LEJ", "LPK", "MCX", "FMM", "MXP", "MSQ", "MIR", "MUC", "MMK", "NYM", "NAJ", "NMA", "NNM", "NVI", "CXR", "GOJ", "OVB", "NUX", "NOJ", "NCU", "IGT", "PMO", "PEZ", "PEE", "PSA", "PKV", "PUJ", "RIX", "ROV", "SZG", "KUF", "SKD", "LED", "SYX", "RTW", "SIP", "AER", "STW", "SGC", "SVX", "SCW", "TBW", "TAS", "TBS", "IKA", "TMJ", "SKG", "TIV", "TOF", "TSF", "TJM", "UFA", "UCT", "UUD", "ULV", "UGC", "USK", "VRA", "VIE", "VOG", "VKT", "VOZ", "YKS", "EVN"]
+# non ru: ["SCO", "ESB", "AYT", "ATH", "BGW", "GYD", "BGY", "TXL", "BTS", "BUD", "BHK", "CUN", "CIT", "KIV", "CGN", "DAM", "DEB", "DJE", "DXB", "DYU", "FEG", "GBB", "KVD", "GRO", "LWN", "HEL", "HER", "IST", "SAW", "KLV", "FKB", "KVA", "LLK", "LCA", "LEJ", "FMM", "MXP", "MSQ", "MIR", "MUC", "NAJ", "NMA", "NVI", "CXR", "NCU", "PMO", "PSA", "PUJ", "RIX", "SZG", "SKD", "SYX", "SIP", "TAS", "TBS", "IKA", "TMJ", "SKG", "TIV", "TSF", "UGC", "VRA", "VIE", "EVN"]
+# svo
+# all: ["ABA", "SCO", "AKX", "ALG", "ALC", "ALA", "AMM", "AMS", "AAQ", "AYT", "KVK", "AQJ", "ARH", "ASF", "ATH", "GUW", "GYD", "BKK", "BCN", "BAX", "NBC", "PEK", "BEY", "EGO", "BEG", "TXL", "SXF", "OGZ", "FRU", "BLQ", "BOJ", "BTK", "BRU", "OTP", "BUD", "BHK", "CAI", "CUN", "CCC", "CSY", "CEK", "CTU", "CEE", "MRV", "CIT", "KIV", "HTA", "CMB", "CPH", "DEL", "DPS", "DRS", "DWC", "DXB", "DUB", "DUS", "FEG", "FRA", "GDZ", "GVA", "GOT", "GRV", "CAN", "KWE", "HAM", "HGH", "HAN", "HAJ", "HAV", "HEL", "HER", "SGN", "HOG", "HKG", "BQS", "IKT", "IST", "IJK", "JED", "KGD", "KGF", "KLV", "KZN", "KEJ", "KHV", "KSQ", "HMA", "KSN", "KRR", "KJA", "KMG", "KQT", "KZO", "LCA", "LIS", "LJU", "LHR", "LAX", "LYS", "MAD", "GDX", "MQF", "MCX", "AGP", "MLE", "MRS", "MZR", "MIA", "MXP", "MSQ", "MBJ", "MUC", "MMK", "NAL", "NMA", "NNG", "NAP", "JFK", "NCE", "NJC", "GOJ", "NOZ", "OVB", "NUX", "OMS", "IGT", "REN", "OSW", "OSS", "OSL", "PMI", "CDG", "PEE", "PKC", "HKT", "PRG", "TAO", "RIX", "FCO", "ROV", "SLY", "KUF", "SKD", "LED", "SNU", "SKX", "RTW", "ICN", "PVG", "SZX", "SIP", "AER", "SOF", "SPU", "STW", "ARN", "STR", "SGC", "SVX", "SCW", "TLL", "TAS", "TBS", "IKA", "TLV", "TFS", "SKG", "TIV", "NRT", "TOF", "TSE", "TJM", "UFA", "ULN", "ULV", "UGC", "URC", "VLC", "MLA", "VRA", "VCE", "VRN", "VIE", "VNO", "VVO", "VOG", "VOZ", "WAW", "IAD", "WUH", "XIY", "YKS", "EVN", "UUS", "ZAG", "ZRH"]
+# non ru: ["SCO", "AKX", "ALG", "ALC", "ALA", "AMM", "AMS", "AYT", "AQJ", "ATH", "GUW", "GYD", "BKK", "BCN", "PEK", "BEY", "BEG", "TXL", "SXF", "FRU", "BLQ", "BOJ", "BRU", "OTP", "BUD", "BHK", "CAI", "CUN", "CCC", "CTU", "CIT", "KIV", "CMB", "CPH", "DEL", "DPS", "DRS", "DWC", "DXB", "DUB", "DUS", "FEG", "FRA", "GVA", "GOT", "CAN", "KWE", "HAM", "HGH", "HAN", "HAJ", "HAV", "HEL", "HER", "SGN", "HOG", "HKG", "IST", "JED", "KGF", "KLV", "KSQ", "KSN", "KMG", "KQT", "KZO", "LCA", "LIS", "LJU", "LHR", "LAX", "LYS", "MAD", "AGP", "MLE", "MRS", "MZR", "MIA", "MXP", "MSQ", "MBJ", "MUC", "NMA", "NNG", "NAP", "JFK", "NCE", "OSS", "OSL", "PMI", "CDG", "HKT", "PRG", "TAO", "RIX", "FCO", "SKD", "SNU", "ICN", "PVG", "SZX", "SIP", "SOF", "SPU", "ARN", "STR", "TLL", "TAS", "TBS", "IKA", "TLV", "TFS", "SKG", "TIV", "NRT", "TSE", "ULN", "UGC", "URC", "VLC", "MLA", "VRA", "VCE", "VRN", "VIE", "VNO", "WAW", "IAD", "WUH", "XIY", "EVN", "ZAG", "ZRH"]
+# led
+# all: ["ALC", "ALA", "AMS", "AAQ", "AYT", "KVK", "ARH", "ASB", "ATH", "GYD", "BCN", "BAX", "NBC", "PEK", "EGO", "BEG", "BGY", "SXF", "TXL", "OGZ", "FRU", "BOJ", "BRU", "BZK", "BUD", "BHK", "CSY", "CEK", "CTU", "CEE", "MRV", "CIT", "KIV", "CGN", "CPH", "DJE", "DOH", "DRS", "DXB", "DYU", "DUS", "VDA", "NBE", "FEG", "FRA", "KVD", "GVA", "GRV", "HAM", "HEL", "INN", "IKT", "SAW", "IST", "IWA", "IJK", "ADB", "KGD", "KLF", "KZN", "LBD", "KVX", "KRR", "KJA", "URS", "LCA", "LPK", "LGW", "STN", "LHR", "MAD", "MCX", "MXP", "MSQ", "MIR", "DME", "VKO", "SVO", "MUC", "MMK", "NYM", "NAL", "NMA", "NNM", "NVI", "NCE", "GOJ", "NSK", "OVB", "NUX", "NOJ", "OLB", "OMS", "REN", "OSS", "CDG", "PEE", "PSA", "PRG", "PUY", "RIX", "RMI", "FCO", "ROV", "SLY", "SZG", "KUF", "SKD", "SYX", "SKX", "ICN", "SIP", "AER", "STW", "ARN", "SGC", "SVX", "SCW", "TLL", "TBW", "TAS", "TBS", "IKA", "TLV", "TMJ", "SKG", "TIV", "TSE", "TUN", "TJM", "UFA", "UCT", "ULV", "UGC", "URC", "USK", "MLA", "VRA", "VRN", "VIE", "VOG", "VOZ", "WAW", "YKS", "IAR", "EVN", "ZAG", "ZRH"]
+# non ru: ["ALC", "ALA", "AMS", "AYT", "ASB", "ATH", "GYD", "BCN", "PEK", "BEG", "BGY", "SXF", "TXL", "FRU", "BOJ", "BRU", "BUD", "BHK", "CTU", "CIT", "KIV", "CGN", "CPH", "DJE", "DOH", "DRS", "DXB", "DYU", "DUS", "VDA", "NBE", "FEG", "FRA", "KVD", "GVA", "HAM", "HEL", "INN", "SAW", "IST", "ADB", "LBD", "LCA", "LGW", "STN", "LHR", "MAD", "MXP", "MSQ", "MIR", "MUC", "NMA", "NVI", "NCE", "OLB", "OSS", "CDG", "PSA", "PRG", "PUY", "RIX", "RMI", "FCO", "SZG", "SKD", "SYX", "ICN", "SIP", "ARN", "TLL", "TAS", "TBS", "IKA", "TLV", "TMJ", "SKG", "TIV", "TSE", "TUN", "UGC", "URC", "MLA", "VRA", "VRN", "VIE", "WAW", "EVN", "ZAG", "ZRH"]
+
+destinations = ["ALC", "ALA", "AMS", "AYT", "ASB", "GYD", "BCN", "PEK", "BGY", "SXF", "FRU", "BRU", "BUD", "BHK", "CTU", "CIT", "KIV", "CGN", "DOH", "DXB", "DYU", "DUS", "VDA", "FEG", "FRA", "KVD", "GVA", "HAM", "HEL", "INN", "SAW", "IST", "LBD", "LCA", "LGW", "STN", "LHR", "MXP", "MSQ", "MUC", "NMA", "NVI", "NCE", "OSS", "CDG", "PSA", "PRG", "RIX", "FCO", "SZG", "SKD", "SYX", "SIP", "ARN", "TLL", "TAS", "TBS", "IKA", "TLV", "TMJ", "TSE", "UGC", "VRA", "VRN", "VIE", "WAW", "EVN", "ZRH"]
+if __name__ == '__main__':
+    p = Processor(60)
+    requests = proxied_requests.Requests()
+    for dest in destinations:
+        airports = 'LED %s' % dest
+        p.add_tasks(generator(task=task,
+                              date=date_range(date(2019, 4, 1), 20),
+                              depart=airports.split(),
+                              arrive=airports.split(),
+                              requests=requests,
+                              max_price=10000))
+
+    p.wait_done()
+    p.stop()
