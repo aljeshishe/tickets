@@ -4,7 +4,7 @@ import os
 
 import sys
 from alembic import context
-from sqlalchemy import engine_from_config, pool
+from sqlalchemy import engine_from_config, pool, create_engine
 from logging.config import fileConfig
 
 # this is the Alembic Config object, which provides
@@ -25,6 +25,7 @@ fileConfig(config.config_file_name)
 parent_dir = os.path.abspath(os.path.join(__file__, "..", '..'))
 sys.path.append(parent_dir)
 import model
+import airports
 target_metadata = model.Base.metadata
 
 
@@ -62,7 +63,7 @@ def run_migrations_online():
     and associate a connection with the context.
 
     """
-    connectable = model.create_engine(db.SQLALCHEMY_DATABASE_URI, poolclass=pool.NullPool)
+    connectable = create_engine(db.SQLALCHEMY_DATABASE_URI, poolclass=pool.NullPool)
     # connectable = engine_from_config(
     #     config.get_section(config.config_ini_section),
     #     prefix='sqlalchemy.',
