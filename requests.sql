@@ -1,3 +1,10 @@
+select count(*) from roticketute;
+
+select * from route order by depart, arrive, airline;
+select * from route where depart='BUD' and airline in ('Wizz Air', 'Ryanair', 'easyJet');
+
+show tables;
+describe ticket;
 select count(*) from ticket;
 select * from ticket;
 select * from ticket order by price;
@@ -34,16 +41,30 @@ select * from ticket order by price;
 select * from ticket where depart_airport_code='CMB' and arrive_airport_code='LED' order by price;
 select * from ticket where depart_airport_code='LED' and arrive_airport_code='CMB' order by price;
 
-select * from ticket where depart_airport_code='L' order by price;
-select * from ticket where arrive_airport_code='PRG' order by price;
+select * from ticket where depart_airport_code='CMB' order by price;
+select * from ticket where arrive_airport_code='CMB' order by price;
+
+select * from ticket where depart_airport_code='ARN' order by price;
+select * from ticket where arrive_airport_code='ARN' order by price;
+
+select * from ticket where depart_airport_code='BUD' order by price;
+select * from ticket where arrive_airport_code='BUD' order by price;
+
 
 select * from ticket where depart_airport_code='DRS' order by price;
 select * from ticket where arrive_airport_code='DRS' order by price;
 
+select * from ticket where arrive_airport_code in ('KLV','PRG')order by price;
+select * from ticket where depart_airport_code in ('KLV','PRG') order by price;
+
+select * from ticket where arrive_airport_code in ('PFO','LCA','LCN')order by price;
+select * from ticket where depart_airport_code in ('PFO','LCA','LCN') order by price;
 
 select * from ticket where arrive_airport_code in ('BRQ','PED','DRS','SXF')order by price;
 select * from ticket where depart_airport_code in ('BRQ','PED','DRS','SXF') order by price;
 
+select * from ticket where depart_airport_code='LED' and arrive_airport_code='CMB' order by price;
+select * from ticket where depart_airport_code='CMB' and arrive_airport_code='LED' order by price;
 
 
 select * from ticket where depart_airport_code='LED' and arrive_airport_code='PEZ' order by price;
