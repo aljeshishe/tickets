@@ -20,7 +20,8 @@ class Requests:
                                              https='https://%s:%s' % (proxy.host, proxy.port))
                     kwargs['timeout'] = (10, 20)
                     response = requests.request(method=method, url=url, **kwargs)
-                    response.json()  # avoiding incorrect json even if 200
+                    if response.headers['content-type'] == 'application/json':
+                        response.json()  # avoiding incorrect json even if 200
                     return response
             except Exception as e:
                 log.warning('Got exception %s try(%s/%s)' % (e, i + 1, TRIES))
