@@ -11,7 +11,7 @@ import log_config
 import requests
 
 import proxied_requests
-from airports import Route
+from airports import Route, Airport
 from db import Session
 from processor import Processor
 
@@ -33,9 +33,9 @@ def crawl(airport, depth):
     with lock:
         if airport in processed:
             return
-        print('Processing {} {}(processed {}/{})'.format(depth, airport, len(processed), len(proc)))
+        print('Processing routes from {}(processed:{}/{} depth:{})'.format(airport, len(processed), len(proc), depth))
         processed.add(airport)
-
+    depth -= 1
     resp = requests.get('https://www.flightsfrom.com/%s' % airport)
     resp.raise_for_status()
     data = resp.text
@@ -50,19 +50,15 @@ def crawl(airport, depth):
         for item in data:
             from_ = item['iata_from']
             to_ = item['iata_to']
+            add_airport(item, session)
+
             for route in item['airlineroutes']:
                 carrier = route['carrier']
                 carrier_name = route['carrier_name']
                 if not from_ or not to_ or not carrier:
                     log.warning('Ignoring:\n%s' % json.dumps(item, indent=2))
                     continue
-                route = Route()
-                route.depart = from_
-                route.arrive = to_
-                route.carrier = carrier
-                route.carrier_name = carrier_name
-                session.merge(route)
-                session.commit()
+                add_route(carrier, carrier_name, from_, session, to_)
             if to_ in processed or depth < 0:
                 continue
             proc.add(partial(crawl, airport=to_, depth=depth))
@@ -73,8 +69,30 @@ def crawl(airport, depth):
         session.close()
 
 
+def add_route(carrier, carrier_name, from_, session, to_):
+    route = Route()
+    route.depart = from_
+    route.arrive = to_
+    route.carrier = carrier
+    route.carrier_name = carrier_name
+    session.merge(route)
+    session.commit()
+
+
+def add_airport(item, session):
+    airport = Airport()
+    airport.code = item['airport']['IATA']
+    airport.city_name = item['airport']['city_name']
+    airport.country_code = item['airport']['country_code']
+    airport.country = item['airport']['country']
+    airport.latitude = item['airport']['latitude']
+    airport.longitude = item['airport']['longitude']
+    session.merge(airport)
+    session.commit()
+
+
 if __name__ == '__main__':
     with suppress(FileExistsError):
         mkdir('routes')
-    proc.add(partial(crawl, airport='LED', depth=2))
+    proc.add(partial(crawl, airport='LED', depth=10))
     proc.wait_done()
