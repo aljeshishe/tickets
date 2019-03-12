@@ -1,10 +1,23 @@
-select count(*) from roticketute;
+SET sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 
-select * from route order by depart, arrive, airline;
-select * from route where depart='BUD' and airline in ('Wizz Air', 'Ryanair', 'easyJet');
+select count(*) from route;
+delete from route where depart!='';
+SELECT * FROM tickets.route;
+select * from tickets.route order by depart, arrive, carrier_name;
+select count(*) from route where carrier_name in ('Wizz Air', 'Ryanair', 'easyJet');
+SELECT * FROM route r
+  inner join airport a1 on r.depart=a1.code and r.depart=a1.code
+  inner join airport a2 on r.arrive=a2.code and r.arrive=a2.code
+  where depart='LED' and a2.country_code!='RU'
+  and carrier_name in ('Wizz Air', 'Ryanair', 'easyJet', 'Pobeda') ;
+select * from route where depart='VKO' and carrier_name in ('Wizz Air', 'Ryanair', 'easyJet', 'Pobeda') ;
+
+SELECT * FROM airport;
 
 show tables;
-describe ticket;
+describe alembic_version;
+drop table route;
+select * from alembic_version;
 select count(*) from ticket;
 select * from ticket;
 select * from ticket order by price;
@@ -41,18 +54,18 @@ select * from ticket order by price;
 select * from ticket where depart_airport_code='CMB' and arrive_airport_code='LED' order by price;
 select * from ticket where depart_airport_code='LED' and arrive_airport_code='CMB' order by price;
 
-select * from ticket where depart_airport_code='CMB' order by price;
-select * from ticket where arrive_airport_code='CMB' order by price;
+select * from ticket where depart_airport_code='VKO' order by price;
+select * from ticket where arrive_airport_code='PRG' order by price;
 
 select * from ticket where depart_airport_code='ARN' order by price;
 select * from ticket where arrive_airport_code='ARN' order by price;
 
-select * from ticket where depart_airport_code='BUD' order by price;
-select * from ticket where arrive_airport_code='BUD' order by price;
+select * from ticket where depart_airport_code='LED' order by price;
+select * from ticket where arrive_airport_code='LED' order by price;
 
 
-select * from ticket where depart_airport_code='DRS' order by price;
-select * from ticket where arrive_airport_code='DRS' order by price;
+select * from ticket where depart_airport_code='PEZ' order by price;
+select * from ticket where arrive_airport_code='PEZ' order by price;
 
 select * from ticket where arrive_airport_code in ('KLV','PRG')order by price;
 select * from ticket where depart_airport_code in ('KLV','PRG') order by price;
@@ -63,12 +76,18 @@ select * from ticket where depart_airport_code in ('PFO','LCA','LCN') order by p
 select * from ticket where arrive_airport_code in ('BRQ','PED','DRS','SXF')order by price;
 select * from ticket where depart_airport_code in ('BRQ','PED','DRS','SXF') order by price;
 
-select * from ticket where depart_airport_code='LED' and arrive_airport_code='CMB' order by price;
-select * from ticket where depart_airport_code='CMB' and arrive_airport_code='LED' order by price;
+select * from ticket where depart_airport_code='LED' and arrive_airport_code not in ('VKO', 'KGD', 'DME', 'ZIA', 'SVO') order by price;
+select * from ticket where depart_airport_code not in ('VKO', 'KGD', 'DME', 'ZIA', 'SVO') and arrive_airport_code='LED' order by price;
 
+select * from ticket where depart_airport_code='DME' and arrive_airport_code='CMB' order by price;
+select * from ticket where depart_airport_code='CMB' and arrive_airport_code='DME' order by price;
 
 select * from ticket where depart_airport_code='LED' and arrive_airport_code='PEZ' order by price;
 select * from ticket where depart_airport_code='PEZ' and arrive_airport_code='LED' order by price;
+
+select * from ticket where depart_airport_code='LED' and arrive_airport_code='PEZ' order by price;
+select * from ticket where depart_airport_code='PEZ' and arrive_airport_code='LED' order by price;
+
 select * from ticket where depart_airport_code='CGN' and arrive_airport_code='PMI' order by price;
 select * from ticket where arrive_airport_code='PMI' and arrive_date_time < '2018-10-22' order by price;
 select * from ticket where depart_airport_code='HEL' and arrive_airport_code='PMI' order by price;

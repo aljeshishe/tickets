@@ -8,7 +8,7 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 
 log_config.configure()
 SQLALCHEMY_DATABASE_NAME = 'tickets'
-SQLALCHEMY_SERVER_URI = 'mysql+pymysql://root:root@localhost:33306'
+SQLALCHEMY_SERVER_URI = 'mysql+pymysql://root:root@localhost:3306'
 SQLALCHEMY_DATABASE_URI = '%s/%s?charset=utf8mb4' % (SQLALCHEMY_SERVER_URI, SQLALCHEMY_DATABASE_NAME)
 engine = create_engine(SQLALCHEMY_DATABASE_URI, echo=False, pool_size=30, max_overflow=150)
 Session = scoped_session(sessionmaker(bind=engine))
