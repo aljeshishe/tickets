@@ -134,7 +134,7 @@ def store(tickets):
             changes = changeset(session.merge(ticket))
             changes.pop("search_date_time", None)
             if changes:
-                log.info('{} updated {} '.format(ticket, ' '.join(['{}(old:{} new:{})'.format(k, w[0], w[1]) for k, w in changes.items()])))
+                log.info('{} updated {} '.format(ticket, ' '.join(['{}(old:{} new:{} {:+.2f})'.format(k, w[0], w[1], w[1]/w[0]*100-100) for k, w in changes.items()])))
             session.commit()
     except Exception:
         log.exception('Exception')
@@ -189,4 +189,4 @@ if __name__ == '__main__':
     Base.metadata.create_all()
     import requests
 
-    task(date(2019, 4, 22), 'MOSC', 'CMB', requests)
+    task(date(2019, 4, 22), 'LED', 'PRG', requests)

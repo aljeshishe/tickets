@@ -30,7 +30,7 @@ class Borrower:
 
 class Proxies:
 
-    def __init__(self, cost_threshold=5, proxy_count_threshold=400, types=[('HTTP', ('Anonymous', 'High'))]):
+    def __init__(self, cost_threshold=5, proxy_count_threshold=4000, types=[('HTTP', ('Anonymous', 'High'))]):
         self.cost_threshold = cost_threshold
         self.proxy_count_threshold = proxy_count_threshold
         self.types = types
@@ -66,7 +66,7 @@ class Proxies:
                 random.seed()
                 random.shuffle(broker._providers)
                 tasks = asyncio.gather(
-                    broker.find(types=self.types, limit=1000),
+                    broker.find(types=self.types, limit=0),
                     show(queue))
 
                 loop.run_until_complete(tasks)

@@ -8,11 +8,12 @@ select count(*) from route where carrier_name in ('Wizz Air', 'Ryanair', 'easyJe
 SELECT * FROM route r
   inner join airport a1 on r.depart=a1.code and r.depart=a1.code
   inner join airport a2 on r.arrive=a2.code and r.arrive=a2.code
-  where depart='LED' and a2.country_code!='RU'
+  where depart='K' # and a2.country_code!='RU'
   and carrier_name in ('Wizz Air', 'Ryanair', 'easyJet', 'Pobeda') ;
 select * from route where depart='VKO' and carrier_name in ('Wizz Air', 'Ryanair', 'easyJet', 'Pobeda') ;
 
 SELECT * FROM airport;
+SELECT count(*) FROM airport;
 
 show tables;
 describe alembic_version;
@@ -54,11 +55,21 @@ select * from ticket order by price;
 select * from ticket where depart_airport_code='CMB' and arrive_airport_code='LED' order by price;
 select * from ticket where depart_airport_code='LED' and arrive_airport_code='CMB' order by price;
 
-select * from ticket where depart_airport_code='VKO' order by price;
-select * from ticket where arrive_airport_code='PRG' order by price;
+select * from ticket where depart_airport_code='LPP' order by price;
+select * from ticket where arrive_airport_code='LPP' order by price;
+
+select * from ticket where depart_airport_code='PEZ' order by price;
+select * from ticket where arrive_airport_code='PEZ' order by price;
+
+select * from ticket where depart_airport_code='LPP' and search_date_time > '2019-03-26 22:20:00' order by price ;
+select * from ticket where arrive_airport_code='LPP' and search_date_time > '2019-03-26 22:20:00' order by price ;
 
 select * from ticket where depart_airport_code='ARN' order by price;
 select * from ticket where arrive_airport_code='ARN' order by price;
+
+select * from ticket where arrive_airport_code = 'szg' and search_date_time > '2019-03-12 22:20:00'order by price ;
+select *, min(price) as m from ticket where search_date_time > '2019-03-12 22:20:00' group by arrive_airport_code order by m ;
+select * from ticket where depart_airport_code='LED' and arrive_airport_code='BUD' order by price;
 
 select * from ticket where depart_airport_code='LED' order by price;
 select * from ticket where arrive_airport_code='LED' order by price;
@@ -67,7 +78,21 @@ select * from ticket where arrive_airport_code='LED' order by price;
 select * from ticket where depart_airport_code='PEZ' order by price;
 select * from ticket where arrive_airport_code='PEZ' order by price;
 
-select * from ticket where arrive_airport_code in ('KLV','PRG')order by price;
+select * from ticket where depart_airport_code='CPH' order by price;
+select * from ticket where arrive_airport_code='CPH' order by price;
+
+select * from ticket where depart_airport_code='TLL' and arrive_airport_code='GRO' order by price;
+select * from ticket where depart_airport_code='GRO' and arrive_airport_code='TLL' order by price;
+
+
+select * from ticket where depart_airport_code='LPP' and search_date_time > '2019-03-20 22:20:00' order by price ;
+select * from ticket where arrive_airport_code='LPP' and search_date_time > '2019-03-20 22:20:00' order by price ;
+
+select * from ticket where depart_airport_code='TLL' and search_date_time > '2019-03-20 22:20:00' order by price ;
+select * from ticket where arrive_airport_code='TLL' and search_date_time > '2019-03-20 22:20:00' order by price ;
+
+
+select * from ticket where arrive_airport_code in ('LED','BUD') and price < 6000 order by depart_date_time;
 select * from ticket where depart_airport_code in ('KLV','PRG') order by price;
 
 select * from ticket where arrive_airport_code in ('PFO','LCA','LCN')order by price;
@@ -76,17 +101,20 @@ select * from ticket where depart_airport_code in ('PFO','LCA','LCN') order by p
 select * from ticket where arrive_airport_code in ('BRQ','PED','DRS','SXF')order by price;
 select * from ticket where depart_airport_code in ('BRQ','PED','DRS','SXF') order by price;
 
-select * from ticket where depart_airport_code='LED' and arrive_airport_code not in ('VKO', 'KGD', 'DME', 'ZIA', 'SVO') order by price;
-select * from ticket where depart_airport_code not in ('VKO', 'KGD', 'DME', 'ZIA', 'SVO') and arrive_airport_code='LED' order by price;
+select * from ticket where depart_airport_code='LED' and arrive_airport_code not in ('VKO', 'KGD', 'DME', 'ZIA', 'SVO', 'KZN') and search_date_time > '2019-03-20 22:20:00'  order by price;
+select * from ticket where depart_airport_code not in ('VKO', 'KGD', 'DME', 'ZIA', 'SVO', 'KZN') and arrive_airport_code='LED'  and search_date_time > '2019-03-20 22:20:00'  order by price;
 
 select * from ticket where depart_airport_code='DME' and arrive_airport_code='CMB' order by price;
 select * from ticket where depart_airport_code='CMB' and arrive_airport_code='DME' order by price;
 
-select * from ticket where depart_airport_code='LED' and arrive_airport_code='PEZ' order by price;
-select * from ticket where depart_airport_code='PEZ' and arrive_airport_code='LED' order by price;
+select * from ticket where depart_airport_code='LED' and arrive_airport_code='BUD' order by price;
+select * from ticket where depart_airport_code='BUD' and arrive_airport_code='LED' order by price;
 
 select * from ticket where depart_airport_code='LED' and arrive_airport_code='PEZ' order by price;
 select * from ticket where depart_airport_code='PEZ' and arrive_airport_code='LED' order by price;
+
+select * from ticket where depart_airport_code='LED' and arrive_airport_code='PRG' order by price;
+select * from ticket where depart_airport_code='PRG' and arrive_airport_code='ZIA' order by price;
 
 select * from ticket where depart_airport_code='CGN' and arrive_airport_code='PMI' order by price;
 select * from ticket where arrive_airport_code='PMI' and arrive_date_time < '2018-10-22' order by price;
